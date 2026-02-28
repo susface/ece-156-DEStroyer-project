@@ -1,8 +1,5 @@
 // ============================================================================
 // ECE 156 Final Project -- Double DES Meet-in-the-Middle Attack
-// California State University, Fresno
-//
-// SKELETON VERSION -- menu only, implementations not included
 // ============================================================================
 
 #define NOMINMAX

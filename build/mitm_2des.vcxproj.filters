@@ -4,6 +4,9 @@
     <ClCompile Include="C:\Users\trigu\source\repos\CMakeProject1\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\trigu\source\repos\CMakeProject1\src\ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\trigu\source\repos\CMakeProject1\CMakeLists.txt" />

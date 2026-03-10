@@ -1,7 +1,6 @@
 // ============================================================================
 // ui.cpp -- DEStroyer console UI implementation
 // ============================================================================
-#define NOMINMAX
 #include <windows.h>
 #include <conio.h>
 #include <cstdio>
@@ -49,6 +48,8 @@ int ui_read_key() {
         int ch2 = _getch();
         if (ch2 == 72) return -1;  // up arrow
         if (ch2 == 80) return -2;  // down arrow
+        if (ch2 == 75) return -3;  // left arrow
+        if (ch2 == 77) return -4;  // right arrow
         return 0;
     }
     return ch;

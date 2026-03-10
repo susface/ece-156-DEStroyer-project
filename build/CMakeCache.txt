@@ -22,6 +22,12 @@ CMAKE_AR:FILEPATH=H:/visual studio/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib
 // else will be ignored.
 CMAKE_CONFIGURATION_TYPES:STRING=Debug;Release;MinSizeRel;RelWithDebInfo
 
+//CUDA architectures
+CMAKE_CUDA_ARCHITECTURES:STRING=75;86;89
+
+//CUDA compiler
+CMAKE_CUDA_COMPILER:FILEPATH=NOTFOUND
+
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=/DWIN32 /D_WINDOWS /GR /EHsc
 
@@ -97,7 +103,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=mitm_2des_skeleton
+CMAKE_PROJECT_NAME:STATIC=mitm_2des
 
 //RC compiler
 CMAKE_RC_COMPILER:FILEPATH=C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/rc.exe
@@ -171,6 +177,15 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+mitm_2des_BINARY_DIR:STATIC=C:/Users/trigu/source/repos/CMakeProject1/build
+
+//Value Computed by CMake
+mitm_2des_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+mitm_2des_SOURCE_DIR:STATIC=C:/Users/trigu/source/repos/CMakeProject1
+
+//Value Computed by CMake
 mitm_2des_skeleton_BINARY_DIR:STATIC=C:/Users/trigu/source/repos/CMakeProject1/build
 
 //Value Computed by CMake
@@ -200,6 +215,8 @@ CMAKE_COMMAND:INTERNAL=F:/visusl/Common7/IDE/CommonExtensions/Microsoft/CMake/CM
 CMAKE_CPACK_COMMAND:INTERNAL=F:/visusl/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cpack.exe
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=F:/visusl/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ctest.exe
+//ADVANCED property for variable: CMAKE_CUDA_COMPILER
+CMAKE_CUDA_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS
 CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_DEBUG

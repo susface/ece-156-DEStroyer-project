@@ -9,8 +9,12 @@
 // ----------------------------------------------------------------------------
 #ifdef HAVE_CUDA
 
+// Option 6: single DES, exhaustive GPU key search over 2^bits keys.
+// multi_pair=true: verify candidate against a second independent PT/CT pair,
+// eliminating false positives caused by key collisions in reduced keyspaces.
 CrackResult run_des_gpu_bruteforce(int bits, bool multi_pair);
 
+// Option 7: peak DES throughput + AES brute-force extrapolation
 CrackResult run_gpu_throughput(uint64_t n_keys);
 
 #endif // HAVE_CUDA

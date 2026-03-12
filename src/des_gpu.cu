@@ -1,5 +1,15 @@
 // ============================================================================
-// des_gpu.cu -- DES GPU Brute-Force (Option 6)- rest not done yet
+// des_gpu.cu -- DES GPU Brute-Force (Option 6)
+//
+// Architecture:
+//   Phase  : single DES, exhaustive key search over 2^N compact key indices
+//   GPU job: each CUDA thread tests one key index
+//   SP tables loaded into shared memory at block launch (2 KB / block)
+//   IP/FP   are factored out of the hot path entirely:
+//     - IP(plaintext)  computed once on host → L0, R0 passed to kernel
+//     - IP(ciphertext) computed once on host → expR16, expL16
+//     - kernel compares R,L after 16 rounds against (expR16, expL16)
+//     - no IP/FP tables needed inside the kernel
 // ============================================================================
 #ifdef HAVE_CUDA
 
@@ -11,6 +21,7 @@
 #include <climits>
 #include "common.h"
 #include "ciphers.h"
+#include "progress.h"
 
 // Color macros must be #defines (not const char* variables) so that nvcc can
 // perform compile-time string literal concatenation in printf calls.
@@ -287,8 +298,9 @@ uint32_t des_f_dev(uint32_t R, uint64_t K, const uint32_t sp[8][64]) {
 // ============================================================================
 // CUDA kernel
 //
-// Each thread tests one key index.  SP tables are loaded into shared memory
-// at the start of each block to exploit the on-chip SRAM broadcast.
+// Each thread tests one key index within the slice [key_offset, key_offset+N).
+// key_offset allows the host to launch the kernel in chunks so it can update
+// the progress bar between each chunk without sacrificing GPU utilisation.
 //
 // Pair 1 (L0/R0/expR16/expL16): primary known PT/CT, always checked.
 // Pair 2 (L0b/R0b/expR16b/expL16b): secondary PT/CT for false-positive
@@ -296,6 +308,7 @@ uint32_t des_f_dev(uint32_t R, uint64_t K, const uint32_t sp[8][64]) {
 //   the second check is always trivially true (one redundant DES, no branch).
 // ============================================================================
 __global__ void des_bruteforce_kernel(
+    uint64_t key_offset,
     uint32_t L0,   uint32_t R0,   uint32_t expR16,  uint32_t expL16,
     uint32_t L0b,  uint32_t R0b,  uint32_t expR16b, uint32_t expL16b,
     uint64_t total_keys,
@@ -308,8 +321,10 @@ __global__ void des_bruteforce_kernel(
     }
     __syncthreads();
 
-    // ── Key index for this thread ────────────────────────────────────────────
-    uint64_t kid = (uint64_t)blockIdx.x * (uint64_t)blockDim.x + threadIdx.x;
+    // ── Absolute key index for this thread ───────────────────────────────────
+    uint64_t kid = key_offset
+                 + (uint64_t)blockIdx.x * (uint64_t)blockDim.x
+                 + (uint64_t)threadIdx.x;
     if (kid >= total_keys) return;
 
     // ── Convert compact index → 64-bit DES key ───────────────────────────────
@@ -342,7 +357,7 @@ __global__ void des_bruteforce_kernel(
         L = tmp;
     }
 
-    if (R != expR16 || L != expL16) return;   // pair 1 failed
+    if (R != expR16 || L != expL16) return;
 
     // ── Pair 2: reset key schedule, run again on second PT ────────────────────
     C = C0snap; D = D0snap;
@@ -362,9 +377,9 @@ __global__ void des_bruteforce_kernel(
         L = tmp;
     }
 
-    if (R != expR16b || L != expL16b) return;  // pair 2 failed
+    if (R != expR16b || L != expL16b) return;
 
-    // ── Both pairs matched: record this key index ─────────────────────────────
+    // ── Both pairs matched ────────────────────────────────────────────────────
     atomicCAS((unsigned long long*)d_found_key,
               (unsigned long long)UINT64_MAX,
               (unsigned long long)kid);
@@ -442,8 +457,7 @@ CrackResult run_des_gpu_bruteforce(int bits, bool multi_pair) {
     }
 
     // ── Launch parameters ─────────────────────────────────────────────────────
-    const int      THREADS = 256;
-    const uint64_t BLOCKS  = (total_keys + THREADS - 1) / THREADS;
+    const int THREADS = 256;
 
     printf("\n");
     printf("  " BCYAN "+----------------------------------------------------------+\n" RESET);
@@ -466,10 +480,7 @@ CrackResult run_des_gpu_bruteforce(int bits, bool multi_pair) {
         printf("  " BCYAN "|" RESET "  Ciphertxt2 : " BYELLOW "0x%016llX\n" RESET,
                (unsigned long long)ciphertext2);
     }
-    printf("  " BCYAN "|" DIM   "  Grid       : %llu blocks x %d threads\n" RESET,
-           (unsigned long long)BLOCKS, THREADS);
     printf("  " BCYAN "+----------------------------------------------------------+\n" RESET);
-    printf("  " DIM "  Searching..." RESET "\n\n");
     fflush(stdout);
 
     // ── Allocate device memory for found-key output ───────────────────────────
@@ -478,35 +489,73 @@ CrackResult run_des_gpu_bruteforce(int bits, bool multi_pair) {
     uint64_t sentinel = UINT64_MAX;
     cudaMemcpy(d_found, &sentinel, sizeof(uint64_t), cudaMemcpyHostToDevice);
 
-    // ── Launch and time ───────────────────────────────────────────────────────
+    // ── Chunked kernel launch with live progress bar ──────────────────────────
+    // The full keyspace is split into CHUNKS equal slices. After each slice the
+    // host syncs, checks if the key was already found (early exit), then calls
+    // progress_update so the bar redraws.  Chunk size is always a multiple of
+    // THREADS so block boundaries stay aligned.
+    //
+    // Adding progress to a future CPU/other-GPU attack is the same 3 calls:
+    //   progress_start → progress_update (in your loop) → progress_finish
+
+    const int      CHUNKS      = 64;
+    const uint64_t CHUNK_KEYS  = ((total_keys + CHUNKS - 1) / CHUNKS
+                                  + THREADS - 1) / THREADS * THREADS;
+
+    Progress prog;
+    progress_start(&prog, "DES GPU Brute-Force", total_keys);
+
     cudaDeviceSynchronize();
     double t0 = wall_time_sec();
 
-    des_bruteforce_kernel<<<(uint32_t)BLOCKS, THREADS>>>(
-        L0,  R0,  expR16,  expL16,
-        L0b, R0b, expR16b, expL16b,
-        total_keys, d_found);
+    uint64_t keys_done = 0;
+    for (int chunk = 0; chunk < CHUNKS && keys_done < total_keys; chunk++) {
+        uint64_t offset     = (uint64_t)chunk * CHUNK_KEYS;
+        uint64_t this_batch = CHUNK_KEYS;
+        if (offset + this_batch > total_keys)
+            this_batch = total_keys - offset;
 
-    cudaDeviceSynchronize();
-    double elapsed = wall_time_sec() - t0;
+        uint64_t chunk_blocks = (this_batch + THREADS - 1) / THREADS;
 
-    cudaError_t err = cudaGetLastError();
-    if (err != cudaSuccess) {
-        printf("  " BRED "CUDA error: %s\n" RESET, cudaGetErrorString(err));
-        cudaFree(d_found);
-        return result;
+        des_bruteforce_kernel<<<(uint32_t)chunk_blocks, THREADS>>>(
+            offset,
+            L0,  R0,  expR16,  expL16,
+            L0b, R0b, expR16b, expL16b,
+            total_keys, d_found);
+
+        cudaDeviceSynchronize();
+
+        keys_done += this_batch;
+        progress_update(&prog, keys_done);
+
+        // Early exit: if a key was already found, stop searching
+        uint64_t peek = UINT64_MAX;
+        cudaMemcpy(&peek, d_found, sizeof(uint64_t), cudaMemcpyDeviceToHost);
+        if (peek != UINT64_MAX) break;
     }
+
+    double elapsed = wall_time_sec() - t0;
 
     // ── Retrieve result ───────────────────────────────────────────────────────
     uint64_t found_idx = UINT64_MAX;
     cudaMemcpy(&found_idx, d_found, sizeof(uint64_t), cudaMemcpyDeviceToHost);
     cudaFree(d_found);
 
-    result.keys_tested  = total_keys;
-    result.elapsed_sec  = elapsed;
-    result.keys_per_sec = (elapsed > 0.0) ? (double)total_keys / elapsed : 0.0;
+    cudaError_t err = cudaGetLastError();
+    if (err != cudaSuccess) {
+        progress_finish(&prog, false);
+        printf("  " BRED "CUDA error: %s\n" RESET, cudaGetErrorString(err));
+        return result;
+    }
 
-    if (found_idx != UINT64_MAX) {
+    bool found = (found_idx != UINT64_MAX);
+    progress_finish(&prog, found);
+
+    result.keys_tested  = keys_done;
+    result.elapsed_sec  = elapsed;
+    result.keys_per_sec = (elapsed > 0.0) ? (double)keys_done / elapsed : 0.0;
+
+    if (found) {
         result.found = true;
         uint64_t found_key = key_index_to_des_key_host(found_idx);
         char buf[64];
@@ -514,6 +563,7 @@ CrackResult run_des_gpu_bruteforce(int bits, bool multi_pair) {
                  (unsigned long long)found_key, (unsigned long long)found_idx);
         result.key_str = buf;
 
+        printf("\n");
         printf("  " BGREEN "+----------------------------------------------------------+\n" RESET);
         printf("  " BGREEN "|" BWHITE "  KEY FOUND!" BGREEN
                "                                                |\n" RESET);
@@ -529,7 +579,7 @@ CrackResult run_des_gpu_bruteforce(int bits, bool multi_pair) {
     } else {
         result.found   = false;
         result.key_str = "(not found)";
-        printf("  " BRED "  Key NOT found in 2^%d keyspace (elapsed %.4f s)\n\n" RESET,
+        printf("\n  " BRED "  Key NOT found in 2^%d keyspace (elapsed %.4f s)\n\n" RESET,
                bits, elapsed);
     }
 

@@ -52,6 +52,7 @@ set(SOURCES
     src/main.cpp
     src/ui.cpp
     src/benchmark.cpp
+    src/progress.cpp
 )
 
 if(HAVE_CUDA)

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.18...4.2)
 
 # =============================================================================
 # CUDA architecture MUST be set before project() -- CMake 4.0+ requirement.

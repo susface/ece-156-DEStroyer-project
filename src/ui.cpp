@@ -12,7 +12,11 @@
 // ============================================================================
 const MenuItem MENU_ITEMS[] = {
     { "CPU MITM",        "multithreaded Phase 1+2",   "-- Meet-in-the-Middle (2DES) --" },
+<<<<<<< HEAD
+    { "GPU MITM",        "GPU+CPU (Hybrid) / P-GPU",  nullptr },
+=======
     { "GPU MITM",        "GPU Phase 1, CPU Phase 2",  nullptr },
+>>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
     { "CPU vs GPU MITM", "side-by-side comparison",   nullptr },
     { "Brute-Force",     "exhaustive K1 x K2",        "-- Reference Attacks --" },
     { "MITM vs BF",      "speedup summary",           nullptr },
@@ -224,5 +228,9 @@ void ui_print_menu(int selected) {
 
     printf("\n" MENU_INDENT DIM
            "Arrow keys to navigate  |  Enter to select  |  Number keys for quick access"
+<<<<<<< HEAD
+           RESET "\n\n");
+=======
            RESET "\n");
+>>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 }

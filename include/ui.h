@@ -43,7 +43,11 @@ extern const int      MENU_COUNT;
 // UI functions
 // ============================================================================
 void ui_init();                        // set UTF-8 code page + VT processing
+<<<<<<< HEAD
+void ui_clear();                       // jump to home
+=======
 void ui_clear();                       // cls
+>>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 int  ui_read_key();                    // blocking single keypress; -1=up -2=down 13=enter
 void ui_press_enter();                 // "Press Enter..." prompt
 

@@ -16,12 +16,27 @@
 #include <cuda_runtime.h>
 #include <cstdio>
 #include <cstdlib>
+<<<<<<< HEAD
+#include <climits>
+#include <vector>
+#include <thread>
+#include <atomic>
+#include <algorithm>
+#include <thrust/device_vector.h>
+#include <thrust/sort.h>
+#include <thrust/execution_policy.h>
+#include "common.h"
+#include "ciphers.h"
+#include "progress.h"
+#include "des_cpu.h"
+=======
 #include <cstdint>
 #include <cstring>
 #include <climits>
 #include "common.h"
 #include "ciphers.h"
 #include "progress.h"
+>>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 
 // Color macros must be #defines (not const char* variables) so that nvcc can
 // perform compile-time string literal concatenation in printf calls.
@@ -586,4 +601,506 @@ CrackResult run_des_gpu_bruteforce(int bits, bool multi_pair) {
     return result;
 }
 
+<<<<<<< HEAD
+// ============================================================================
+// Option 7: GPU Throughput + AES extrapolation
+// ============================================================================
+CrackResult run_gpu_throughput(uint64_t n_keys) {
+    CrackResult result;
+    result.cipher = "DES";
+    result.method = "GPU Throughput Test";
+    result.found = false;
+    result.key_str = "N/A";
+
+    // ── Build SP tables (host) and upload to constant memory ─────────────────
+    static uint32_t h_sp[8][64];
+    static bool sp_ready = false;
+    if (!sp_ready) {
+        compute_sp_tables(h_sp);
+        sp_ready = true;
+    }
+    cudaMemcpyToSymbol(d_sp,     h_sp,    sizeof(h_sp));
+    cudaMemcpyToSymbol(d_pc1c,   PC1C,    sizeof(PC1C));
+    cudaMemcpyToSymbol(d_pc1d,   PC1D,    sizeof(PC1D));
+    cudaMemcpyToSymbol(d_pc2,    PC2,     sizeof(PC2));
+    cudaMemcpyToSymbol(d_shifts, SHIFTS,  sizeof(SHIFTS));
+
+    // Garbage target values so the branch never hits
+    uint32_t L0 = 0xDEADC0DE, R0 = 0xCAFEFEED;
+    uint32_t expR16 = 0x11111111, expL16 = 0x22222222;
+    uint32_t L0b = L0, R0b = R0, expR16b = expR16, expL16b = expL16;
+
+    const int THREADS = 256;
+
+    printf("\n");
+    printf("  " BCYAN "+----------------------------------------------------------+\n" RESET);
+    printf("  " BCYAN "|" BWHITE "  GPU Throughput Test (Single DES)" BCYAN
+           "                         |\n" RESET);
+    printf("  " BCYAN "+----------------------------------------------------------+\n" RESET);
+    printf("  " BCYAN "|" RESET "  Target keys : " BYELLOW "%llu\n" RESET, (unsigned long long)n_keys);
+    printf("  " BCYAN "+----------------------------------------------------------+\n" RESET);
+    fflush(stdout);
+
+    uint64_t* d_found = nullptr;
+    cudaMalloc(&d_found, sizeof(uint64_t));
+    uint64_t sentinel = UINT64_MAX;
+    cudaMemcpy(d_found, &sentinel, sizeof(uint64_t), cudaMemcpyHostToDevice);
+
+    const int      CHUNKS      = 64;
+    const uint64_t CHUNK_KEYS  = ((n_keys + CHUNKS - 1) / CHUNKS
+                                  + THREADS - 1) / THREADS * THREADS;
+
+    Progress prog;
+    progress_start(&prog, "GPU Throughput", n_keys);
+
+    cudaDeviceSynchronize();
+    double t0 = wall_time_sec();
+
+    uint64_t keys_done = 0;
+    for (int chunk = 0; chunk < CHUNKS && keys_done < n_keys; chunk++) {
+        uint64_t offset     = (uint64_t)chunk * CHUNK_KEYS;
+        uint64_t this_batch = CHUNK_KEYS;
+        if (offset + this_batch > n_keys)
+            this_batch = n_keys - offset;
+
+        uint64_t chunk_blocks = (this_batch + THREADS - 1) / THREADS;
+
+        des_bruteforce_kernel<<<(uint32_t)chunk_blocks, THREADS>>>(
+            offset,
+            L0,  R0,  expR16,  expL16,
+            L0b, R0b, expR16b, expL16b,
+            n_keys, d_found);
+
+        cudaDeviceSynchronize();
+
+        keys_done += this_batch;
+        progress_update(&prog, keys_done);
+    }
+
+    double elapsed = wall_time_sec() - t0;
+    cudaFree(d_found);
+
+    progress_finish(&prog, false); // always "not found"
+
+    result.keys_tested  = keys_done;
+    result.elapsed_sec  = elapsed;
+    result.keys_per_sec = (elapsed > 0.0) ? (double)keys_done / elapsed : 0.0;
+
+    printf("\n  " BGREEN "  Completed benchmark: %.4f s\n" RESET, elapsed);
+    printf("  " BGREEN "  Peak Rate: %.3e keys/sec\n\n" RESET, result.keys_per_sec);
+
+    return result;
+}
+
+// ============================================================================
+// GPU MITM Attack Kernels
+// ============================================================================
+
+__global__ void mitm_build_kernel(
+    uint64_t key_offset,
+    uint32_t L0, uint32_t R0,
+    uint64_t total_keys,
+    uint64_t* d_mids,
+    uint64_t* d_k1)
+{
+    __shared__ uint32_t sp[8][64];
+    for (int i = threadIdx.x; i < 512; i += blockDim.x) {
+        sp[i >> 6][i & 63] = d_sp[i >> 6][i & 63];
+    }
+    __syncthreads();
+
+    uint64_t kid = key_offset + (uint64_t)blockIdx.x * blockDim.x + threadIdx.x;
+    if (kid >= total_keys) return;
+
+    uint64_t key = key_index_to_des_key_dev(kid);
+
+    uint32_t C = 0, D = 0;
+    for (int i = 0; i < 28; i++) {
+        C |= (uint32_t)((key >> (64 - d_pc1c[i])) & 1U) << (27 - i);
+        D |= (uint32_t)((key >> (64 - d_pc1d[i])) & 1U) << (27 - i);
+    }
+
+    uint32_t L = L0, R = R0;
+    for (int r = 0; r < 16; r++) {
+        int s = (int)d_shifts[r];
+        C = ((C << s) | (C >> (28 - s))) & 0x0FFFFFFFU;
+        D = ((D << s) | (D >> (28 - s))) & 0x0FFFFFFFU;
+
+        uint64_t CD = ((uint64_t)C << 28) | D;
+        uint64_t K = 0;
+        for (int i = 0; i < 48; i++)
+            K |= ((CD >> (56 - d_pc2[i])) & 1ULL) << (47 - i);
+
+        uint32_t tmp = R;
+        R = L ^ des_f_dev(R, K, sp);
+        L = tmp;
+    }
+
+    uint64_t mid = ((uint64_t)R << 32) | L;
+    d_mids[kid] = mid;
+    d_k1[kid] = kid;
+}
+
+__global__ void mitm_search_kernel(
+    uint64_t key_offset,
+    uint32_t L0_ct, uint32_t R0_ct,
+    uint32_t L_ct2, uint32_t R_ct2,
+    uint32_t L_pt2, uint32_t R_pt2,
+    bool multi_pair,
+    uint64_t total_keys,
+    const uint64_t* __restrict__ d_mids,
+    const uint64_t* __restrict__ d_k1,
+    uint64_t* d_found_key1,
+    uint64_t* d_found_key2)
+{
+    __shared__ uint32_t sp[8][64];
+    for (int i = threadIdx.x; i < 512; i += blockDim.x) {
+        sp[i >> 6][i & 63] = d_sp[i >> 6][i & 63];
+    }
+    __syncthreads();
+
+    uint64_t kid = key_offset + (uint64_t)blockIdx.x * blockDim.x + threadIdx.x;
+    if (kid >= total_keys) return;
+
+    // Check early exit
+    if (*(unsigned long long*)d_found_key1 != UINT64_MAX) return;
+
+    uint64_t key = key_index_to_des_key_dev(kid);
+    uint32_t C = 0, D = 0;
+    for (int i = 0; i < 28; i++) {
+        C |= (uint32_t)((key >> (64 - d_pc1c[i])) & 1U) << (27 - i);
+        D |= (uint32_t)((key >> (64 - d_pc1d[i])) & 1U) << (27 - i);
+    }
+
+    uint64_t subkeys[16];
+    for (int r = 0; r < 16; r++) {
+        int s = (int)d_shifts[r];
+        C = ((C << s) | (C >> (28 - s))) & 0x0FFFFFFFU;
+        D = ((D << s) | (D >> (28 - s))) & 0x0FFFFFFFU;
+
+        uint64_t CD = ((uint64_t)C << 28) | D;
+        uint64_t K = 0;
+        for (int i = 0; i < 48; i++) K |= ((CD >> (56 - d_pc2[i])) & 1ULL) << (47 - i);
+        subkeys[r] = K;
+    }
+
+    uint32_t L = L0_ct, R = R0_ct;
+    for (int r = 15; r >= 0; r--) {
+        uint32_t tmp = R;
+        R = L ^ des_f_dev(R, subkeys[r], sp);
+        L = tmp;
+    }
+    
+    // Extracted exactly matching pre-FP mid
+    uint64_t target_mid = ((uint64_t)R << 32) | L;
+
+    long long left = 0, right = total_keys - 1;
+    long long match = -1;
+    while(left <= right) {
+        long long mid_idx = left + (right - left) / 2;
+        uint64_t v = d_mids[mid_idx];
+        if (v == target_mid) {
+            match = mid_idx;
+            break;
+        } else if (v < target_mid) {
+            left = mid_idx + 1;
+        } else {
+            right = mid_idx - 1;
+        }
+    }
+
+    if (match != -1) {
+        long long start_idx = match;
+        while(start_idx > 0 && d_mids[start_idx - 1] == target_mid) start_idx--;
+
+        for (long long m = start_idx; m < total_keys && d_mids[m] == target_mid; m++) {
+            bool valid = true;
+            uint64_t found_k1 = d_k1[m];
+            
+            if (multi_pair) {
+                uint32_t L2 = L_ct2, R2 = R_ct2;
+                for (int r = 15; r >= 0; r--) {
+                    uint32_t tmp = R2;
+                    R2 = L2 ^ des_f_dev(R2, subkeys[r], sp);
+                    L2 = tmp;
+                }
+                uint64_t target_mid2 = ((uint64_t)R2 << 32) | L2;
+
+                uint64_t key1 = key_index_to_des_key_dev(found_k1);
+                uint32_t C1 = 0, D1 = 0;
+                for (int i = 0; i < 28; i++) {
+                    C1 |= ((key1 >> (64 - d_pc1c[i])) & 1U) << (27 - i);
+                    D1 |= ((key1 >> (64 - d_pc1d[i])) & 1U) << (27 - i);
+                }
+                uint32_t L_p2 = L_pt2, R_p2 = R_pt2;
+                for (int r = 0; r < 16; r++) {
+                    int s = (int)d_shifts[r];
+                    C1 = ((C1 << s) | (C1 >> (28 - s))) & 0x0FFFFFFFU;
+                    D1 = ((D1 << s) | (D1 >> (28 - s))) & 0x0FFFFFFFU;
+                    uint64_t CD1 = ((uint64_t)C1 << 28) | D1;
+                    uint64_t K1 = 0;
+                    for (int j = 0; j < 48; j++) K1 |= ((CD1 >> (56 - d_pc2[j])) & 1ULL) << (47 - j);
+                    uint32_t tmp = R_p2;
+                    R_p2 = L_p2 ^ des_f_dev(R_p2, K1, sp);
+                    L_p2 = tmp;
+                }
+                uint64_t calc_mid2 = ((uint64_t)R_p2 << 32) | L_p2;
+
+                if (calc_mid2 != target_mid2) valid = false;
+            }
+
+            if (valid) {
+                atomicCAS((unsigned long long*)d_found_key1, UINT64_MAX, (unsigned long long)found_k1);
+                atomicCAS((unsigned long long*)d_found_key2, UINT64_MAX, (unsigned long long)kid);
+                break;
+            }
+        }
+    }
+}
+
+// ============================================================================
+// Host wrapper:  run_gpu_mitm
+// ============================================================================
+CrackResult run_gpu_mitm(int bits, bool multi_pair, bool show_transfer) {
+    CrackResult result;
+    result.cipher = "Double DES";
+    result.method = "GPU MITM (" + std::to_string(bits) + " bits)";
+
+    static uint32_t h_sp[8][64];
+    static bool sp_ready = false;
+    if (!sp_ready) {
+        compute_sp_tables(h_sp);
+        sp_ready = true;
+    }
+    cudaMemcpyToSymbol(d_sp,     h_sp,    sizeof(h_sp));
+    cudaMemcpyToSymbol(d_pc1c,   PC1C,    sizeof(PC1C));
+    cudaMemcpyToSymbol(d_pc1d,   PC1D,    sizeof(PC1D));
+    cudaMemcpyToSymbol(d_pc2,    PC2,     sizeof(PC2));
+    cudaMemcpyToSymbol(d_shifts, SHIFTS,  sizeof(SHIFTS));
+
+    const uint64_t total_keys = 1ULL << bits;
+    uint64_t rng_state = GetTickCount64();
+    if (rng_state == 0) rng_state = 0xDEADBEEFCAFEULL;
+    uint64_t target_idx1 = (xorshift64(rng_state) % total_keys);
+    uint64_t target_idx2 = (xorshift64(rng_state) % total_keys);
+
+    uint64_t target_k1 = key_index_to_des_key_host(target_idx1);
+    uint64_t target_k2 = key_index_to_des_key_host(target_idx2);
+
+    const uint64_t PT1 = 0x0123456789ABCDEFULL;
+    uint64_t CT_mid = des_encrypt_host(PT1, target_k1, h_sp);
+    uint64_t CT1 = des_encrypt_host(CT_mid, target_k2, h_sp);
+
+    const uint64_t PT2 = 0xFEDCBA9876543210ULL;
+    uint64_t CT2_mid = des_encrypt_host(PT2, target_k1, h_sp);
+    uint64_t CT2 = des_encrypt_host(CT2_mid, target_k2, h_sp);
+
+    uint64_t ip_pt1 = apply_perm64(PT1, IP_TBL);
+    uint32_t L0_pt1 = (uint32_t)(ip_pt1 >> 32), R0_pt1 = (uint32_t)ip_pt1;
+    uint64_t ip_ct1 = apply_perm64(CT1, IP_TBL);
+    uint32_t L0_ct1 = (uint32_t)(ip_ct1 >> 32), R0_ct1 = (uint32_t)ip_ct1;
+
+    uint64_t ip_pt2 = apply_perm64(PT2, IP_TBL);
+    uint32_t L0_pt2 = (uint32_t)(ip_pt2 >> 32), R0_pt2 = (uint32_t)ip_pt2;
+    uint64_t ip_ct2 = apply_perm64(CT2, IP_TBL);
+    uint32_t L0_ct2 = (uint32_t)(ip_ct2 >> 32), R0_ct2 = (uint32_t)ip_ct2;
+
+    printf("\n");
+    printf("  " BCYAN "+----------------------------------------------------------+\n" RESET);
+    printf("  " BCYAN "|" BWHITE "  GPU Meet-in-the-Middle Attack" BCYAN
+           "                            |\n" RESET);
+    printf("  " BCYAN "+----------------------------------------------------------+\n" RESET);
+    printf("  " BCYAN "|" RESET "  Keyspace Phase : " BYELLOW "2^%d = %llu entries\n" RESET,
+           bits, (unsigned long long)total_keys);
+    printf("  " BCYAN "|" RESET "  VRAM Requir'd  : " BYELLOW "%.2f MB\n" RESET, 
+           (double)(total_keys * 16) / 1048576.0);
+    printf("  " BCYAN "|" RESET "  Multi-pair     : " BYELLOW "%s\n" RESET,
+           multi_pair ? "ENABLED" : "disabled");
+    printf("  " BCYAN "+----------------------------------------------------------+\n" RESET);
+    fflush(stdout);
+
+    uint64_t *d_mids, *d_k1, *d_found1, *d_found2;
+    cudaError_t alloc1 = cudaMalloc(&d_mids, total_keys * sizeof(uint64_t));
+    cudaError_t alloc2 = cudaMalloc(&d_k1, total_keys * sizeof(uint64_t));
+    if (alloc1 != cudaSuccess || alloc2 != cudaSuccess) {
+        printf("  " BRED "ERROR: Out of VRAM! Reduce keyspace!\n" RESET);
+        if (alloc1 == cudaSuccess) cudaFree(d_mids);
+        if (alloc2 == cudaSuccess) cudaFree(d_k1);
+        result.found = false;
+        return result;
+    }
+    cudaMalloc(&d_found1, sizeof(uint64_t));
+    cudaMalloc(&d_found2, sizeof(uint64_t));
+    uint64_t sentinel = UINT64_MAX;
+    cudaMemcpy(d_found1, &sentinel, sizeof(uint64_t), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_found2, &sentinel, sizeof(uint64_t), cudaMemcpyHostToDevice);
+
+    Progress prog;
+    progress_start(&prog, "GPU MITM (Build+Sort+Meet)", total_keys * 2);
+
+    double t0 = wall_time_sec();
+    const int THREADS = 256;
+    const int CHUNKS = 64;
+    const uint64_t CHUNK_KEYS = ((total_keys + CHUNKS - 1) / CHUNKS + THREADS - 1) / THREADS * THREADS;
+
+    // Phase 1: Build
+    uint64_t keys_done = 0;
+    for (int chunk = 0; chunk < CHUNKS && keys_done < total_keys; chunk++) {
+        uint64_t offset = (uint64_t)chunk * CHUNK_KEYS;
+        uint64_t this_batch = min(CHUNK_KEYS, total_keys - offset);
+        uint64_t blocks = (this_batch + THREADS - 1) / THREADS;
+        mitm_build_kernel<<<(uint32_t)blocks, THREADS>>>(offset, L0_pt1, R0_pt1, total_keys, d_mids, d_k1);
+        cudaDeviceSynchronize();
+        keys_done += this_batch;
+        if ((chunk % 4) == 0 || keys_done == total_keys) progress_update(&prog, keys_done / 2); // Map build to 25% bar
+    }
+
+    // Sort Phase
+    thrust::device_ptr<uint64_t> dev_ptr_keys(d_mids);
+    thrust::device_ptr<uint64_t> dev_ptr_vals(d_k1);
+    thrust::sort_by_key(dev_ptr_keys, dev_ptr_keys + total_keys, dev_ptr_vals);
+    cudaDeviceSynchronize();
+    progress_update(&prog, total_keys); // Map sort to 50% bar
+
+    // Phase 2: Meet
+    uint64_t found_idx1 = UINT64_MAX, found_idx2 = UINT64_MAX;
+
+    if (bits >= 28) {
+        // Native GPU Phase 2
+        keys_done = 0;
+        for (int chunk = 0; chunk < CHUNKS && keys_done < total_keys; chunk++) {
+            uint64_t offset = (uint64_t)chunk * CHUNK_KEYS;
+            uint64_t this_batch = min(CHUNK_KEYS, total_keys - offset);
+            uint64_t blocks = (this_batch + THREADS - 1) / THREADS;
+            mitm_search_kernel<<<(uint32_t)blocks, THREADS>>>(
+                offset, L0_ct1, R0_ct1, L0_ct2, R0_ct2, L0_pt2, R0_pt2,
+                multi_pair, total_keys, d_mids, d_k1, d_found1, d_found2);
+            
+            cudaDeviceSynchronize();
+            keys_done += this_batch;
+            if ((chunk % 4) == 0 || keys_done == total_keys) progress_update(&prog, total_keys + keys_done);
+
+            uint64_t peek = UINT64_MAX;
+            cudaMemcpy(&peek, d_found1, sizeof(uint64_t), cudaMemcpyDeviceToHost);
+            if (peek != UINT64_MAX) break;
+        }
+
+        cudaMemcpy(&found_idx1, d_found1, sizeof(uint64_t), cudaMemcpyDeviceToHost);
+        cudaMemcpy(&found_idx2, d_found2, sizeof(uint64_t), cudaMemcpyDeviceToHost);
+    } else {
+        // CPU Hybrid Phase 2
+        std::vector<uint64_t> h_mids(total_keys);
+        std::vector<uint64_t> h_k1(total_keys);
+        
+        if (show_transfer) {
+            double mb = (double)(total_keys * 16) / 1048576.0;
+            printf("\n  " BCYAN "  [Hybrid] Downloading %.2f MB to Host System RAM...\n" RESET, mb);
+            fflush(stdout);
+        }
+
+        // PCIe Transfer
+        cudaMemcpy(h_mids.data(), d_mids, total_keys * sizeof(uint64_t), cudaMemcpyDeviceToHost);
+        cudaMemcpy(h_k1.data(), d_k1, total_keys * sizeof(uint64_t), cudaMemcpyDeviceToHost);
+        
+        std::atomic<uint64_t> atom_f1(UINT64_MAX);
+        std::atomic<uint64_t> atom_f2(UINT64_MAX);
+
+        int num_threads = std::thread::hardware_concurrency();
+        if (num_threads == 0) num_threads = 4;
+        std::vector<std::thread> pool;
+
+        for (int tid = 0; tid < num_threads; tid++) {
+            pool.push_back(std::thread([&, tid]() {
+                uint64_t chunk = (total_keys + num_threads - 1) / num_threads;
+                uint64_t start = (uint64_t)tid * chunk;
+                uint64_t end = min(start + chunk, total_keys);
+
+                for (uint64_t kid = start; kid < end; kid++) {
+                    if (atom_f1.load(std::memory_order_relaxed) != UINT64_MAX) break;
+
+                    uint64_t key = key_index_to_des_key_host(kid);
+                    uint64_t subkeys[16];
+                    generate_subkeys(key, subkeys);
+
+                    // Reconstruct internal target state mid
+                    uint64_t true_mid = des_decrypt(CT1, subkeys);
+                    uint64_t target_mid = apply_perm64(true_mid, IP_TBL);
+
+                    auto lb = std::lower_bound(h_mids.begin(), h_mids.end(), target_mid);
+                    while (lb != h_mids.end() && *lb == target_mid) {
+                        size_t idx = std::distance(h_mids.begin(), lb);
+                        uint64_t candidate_k1 = h_k1[idx];
+                        bool valid = true;
+
+                        if (multi_pair) {
+                            uint64_t p_k1 = key_index_to_des_key_host(candidate_k1);
+                            uint64_t calc_ct2 = double_des_encrypt(PT2, p_k1, key);
+                            if (calc_ct2 != CT2) valid = false;
+                        }
+
+                        if (valid) {
+                            uint64_t exp = UINT64_MAX;
+                            if (atom_f1.compare_exchange_strong(exp, candidate_k1)) {
+                                atom_f2.store(kid);
+                            }
+                            break;
+                        }
+                        lb++;
+                    }
+                }
+            }));
+        }
+
+        for (auto& t : pool) {
+            t.join();
+        }
+        
+        found_idx1 = atom_f1.load(std::memory_order_relaxed);
+        found_idx2 = atom_f2.load(std::memory_order_relaxed);
+        keys_done = total_keys; 
+        progress_update(&prog, total_keys + keys_done);
+    }
+
+    double elapsed = wall_time_sec() - t0;
+
+    cudaFree(d_mids); cudaFree(d_k1); cudaFree(d_found1); cudaFree(d_found2);
+
+    bool found = (found_idx1 != UINT64_MAX && found_idx2 != UINT64_MAX);
+    progress_finish(&prog, found);
+
+    result.keys_tested  = total_keys + keys_done; // Evaluated build + search subset
+    result.elapsed_sec  = elapsed;
+    result.keys_per_sec = (elapsed > 0.0) ? (double)result.keys_tested / elapsed : 0.0;
+
+    if (found) {
+        result.found = true;
+        uint64_t found_k1 = key_index_to_des_key_host(found_idx1);
+        uint64_t found_k2 = key_index_to_des_key_host(found_idx2);
+        char buf[64];
+        snprintf(buf, sizeof(buf), "K1:%014llx K2:%014llx", (unsigned long long)found_k1, (unsigned long long)found_k2);
+        result.key_str = buf;
+
+        printf("\n");
+        printf("  " BGREEN "+----------------------------------------------------------+\n" RESET);
+        printf("  " BGREEN "|" BWHITE "  KEYS FOUND!" BGREEN
+               "                                               |\n" RESET);
+        printf("  " BGREEN "+----------------------------------------------------------+\n" RESET);
+        printf("  " BGREEN "|" RESET "  K1        : " BYELLOW "0x%016llX" DIM " (idx %llu)\n" RESET,
+               (unsigned long long)found_k1, (unsigned long long)found_idx1);
+        printf("  " BGREEN "|" RESET "  K2        : " BYELLOW "0x%016llX" DIM " (idx %llu)\n" RESET,
+               (unsigned long long)found_k2, (unsigned long long)found_idx2);
+        printf("  " BGREEN "|" RESET "  Time      : " BYELLOW "%.4f s\n" RESET, elapsed);
+        printf("  " BGREEN "+----------------------------------------------------------+\n\n" RESET);
+    } else {
+        result.found   = false;
+        result.key_str = "(not found)";
+        printf("\n  " BRED "  Keys NOT found. Try KILLING YOUR SELF!.\n\n" RESET);
+    }
+
+    return result;
+}
+
+
+=======
+>>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 #endif // HAVE_CUDA

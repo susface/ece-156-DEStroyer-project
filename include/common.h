@@ -5,7 +5,7 @@
 // NOMINMAX and _CRT_SECURE_NO_WARNINGS are injected by CMakeLists.txt via
 // add_compile_definitions — do NOT redefine here to avoid nvcc macro warnings.
 #include <windows.h>
-#include <intrin.h>   // __popcnt (Windows-only; no platform guards needed)
+#include <intrin.h>
 #include <cstdint>
 #include <string>
 

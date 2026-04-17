@@ -57,7 +57,7 @@ set(SOURCES
 
 if(HAVE_CUDA)
     list(APPEND SOURCES src/des_gpu.cu)
-    add_compile_definitions(HAVE_CUDA)
+    add_compile_definitions(HAVE_CUDA CCCL_IGNORE_MSVC_TRADITIONAL_PREPROCESSOR_WARNING)
 endif()
 
 add_executable(mitm_2des ${SOURCES})

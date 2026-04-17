@@ -16,7 +16,6 @@
 #include <cuda_runtime.h>
 #include <cstdio>
 #include <cstdlib>
-<<<<<<< HEAD
 #include <climits>
 #include <vector>
 #include <thread>
@@ -29,14 +28,6 @@
 #include "ciphers.h"
 #include "progress.h"
 #include "des_cpu.h"
-=======
-#include <cstdint>
-#include <cstring>
-#include <climits>
-#include "common.h"
-#include "ciphers.h"
-#include "progress.h"
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 
 // Color macros must be #defines (not const char* variables) so that nvcc can
 // perform compile-time string literal concatenation in printf calls.
@@ -601,7 +592,6 @@ CrackResult run_des_gpu_bruteforce(int bits, bool multi_pair) {
     return result;
 }
 
-<<<<<<< HEAD
 // ============================================================================
 // Option 7: GPU Throughput + AES extrapolation
 // ============================================================================
@@ -1101,6 +1091,4 @@ CrackResult run_gpu_mitm(int bits, bool multi_pair, bool show_transfer) {
 }
 
 
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 #endif // HAVE_CUDA

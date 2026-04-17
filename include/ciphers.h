@@ -5,25 +5,20 @@
 #include "common.h"
 
 // ----------------------------------------------------------------------------
-<<<<<<< HEAD
 // CPU DES attacks
 // ----------------------------------------------------------------------------
 CrackResult run_cpu_mitm(int mitm_bits, bool multi_pair);
 CrackResult run_cpu_bruteforce(int compare_bits, bool multi_pair);
 
 // ----------------------------------------------------------------------------
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 // GPU DES attacks (compiled only when CUDA is available)
 // ----------------------------------------------------------------------------
 #ifdef HAVE_CUDA
 
-<<<<<<< HEAD
 // Option 2: GPU Meet-in-the-Middle using Thrust
 CrackResult run_gpu_mitm(int mitm_bits, bool multi_pair, bool show_transfer);
 
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
+
 // Option 6: single DES, exhaustive GPU key search over 2^bits keys.
 // multi_pair=true: verify candidate against a second independent PT/CT pair,
 // eliminating false positives caused by key collisions in reduced keyspaces.

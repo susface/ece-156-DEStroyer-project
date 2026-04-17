@@ -7,21 +7,14 @@
 #include "common.h"
 #include "ciphers.h"
 #include "ui.h"
-<<<<<<< HEAD
 #include "des_cpu.h"
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 
 // Global bit-width settings (extern'd in ui.cpp for the status bar)
 int g_mitm_bits    = 20;
 int g_compare_bits = 10;
 int g_des_bits     = 24;
-<<<<<<< HEAD
 int g_multi_pair    = 0;    // 0 = off, 1 = on; toggled in Settings
 int g_show_transfer = 1;    // 0 = silent, 1 = log PCIe transfer size
-=======
-int g_multi_pair   = 0;    // 0 = off, 1 = on; toggled in Settings
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 
 // ============================================================================
 // Option name table
@@ -35,11 +28,7 @@ static const char* OPTION_NAMES[] = {
     "DES GPU Brute-Force",   // index 5 — implemented
     "GPU Throughput + AES",
     "Complexity Analysis",
-<<<<<<< HEAD
     "Settings", // done 
-=======
-    "Settings",
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 };
 
 // ============================================================================
@@ -115,16 +104,10 @@ static const Preset PRESETS[] = {
 static const int PRESET_COUNT = 4;
 
 // Row indices
-<<<<<<< HEAD
 static const int TOGGLE_ROW   = SETTINGS_COUNT;          // 3
 static const int LOG_TRANSFER_ROW = SETTINGS_COUNT + 1;  // 4
 static const int PRESET_ROW   = SETTINGS_COUNT + 2;      // 5
 static const int TOTAL_ROWS   = SETTINGS_COUNT + 3;      // 6
-=======
-static const int TOGGLE_ROW  = SETTINGS_COUNT;          // 3
-static const int PRESET_ROW  = SETTINGS_COUNT + 1;      // 4
-static const int TOTAL_ROWS  = SETTINGS_COUNT + 2;      // 5
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 
 static void apply_preset(int p) {
     g_mitm_bits    = PRESETS[p].mitm_bits;
@@ -213,10 +196,6 @@ static void draw_settings(int sel, int preset_cursor) {
         bool hi = (sel == TOGGLE_ROW);
         const char* bg = hi ? BG_BLUE : "";
 
-<<<<<<< HEAD
-=======
-        // State indicator
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
         const char* state_col = g_multi_pair ? BGREEN : DIM;
         const char* state_str = g_multi_pair ? "[ ON  ]" : "[ OFF ]";
         const char* lc        = hi ? BWHITE : BWHITE;
@@ -228,10 +207,6 @@ static void draw_settings(int sel, int preset_cursor) {
         int lpad  = (llen < label_w) ? label_w - llen : 0;
         int hlen  = (int)strlen(hint);
 
-<<<<<<< HEAD
-=======
-        // visible: 1 + 3 + 2 + label_w + 2 + 7 + 2 + hlen
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
         int used  = 1 + 3 + 2 + label_w + 2 + 7 + 2 + hlen;
         int trail = W - used;
         if (trail < 0) trail = 0;
@@ -245,7 +220,6 @@ static void draw_settings(int sel, int preset_cursor) {
         sp(trail);
         printf(BCYAN "|\n" RESET);
     }
-<<<<<<< HEAD
     {
         bool hi = (sel == LOG_TRANSFER_ROW);
         const char* bg = hi ? BG_BLUE : "";
@@ -274,8 +248,6 @@ static void draw_settings(int sel, int preset_cursor) {
         sp(trail);
         printf(BCYAN "|\n" RESET);
     }
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 
     // ── Presets section ──────────────────────────────────────────────────────
     printf(MENU_INDENT BCYAN "|"); sp(W); printf("|\n" RESET);
@@ -321,11 +293,7 @@ static void draw_settings(int sel, int preset_cursor) {
         if (sel == PRESET_ROW) {
             hint = "Left/Right to select  |  Enter to apply preset";
             hcol = BYELLOW;
-<<<<<<< HEAD
         } else if (sel == TOGGLE_ROW || sel == LOG_TRANSFER_ROW) {
-=======
-        } else if (sel == TOGGLE_ROW) {
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
             hint = "Left/Right or Enter  to toggle  |  Esc  to return";
             hcol = BWHITE;
         } else {
@@ -372,11 +340,8 @@ static void run_settings() {
                 if (*s.value > s.lo) (*s.value)--;
             } else if (sel == TOGGLE_ROW) {
                 g_multi_pair ^= 1;
-<<<<<<< HEAD
             } else if (sel == LOG_TRANSFER_ROW) {
                 g_show_transfer ^= 1;
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
             } else {
                 preset_cursor = (preset_cursor - 1 + PRESET_COUNT) % PRESET_COUNT;
             }
@@ -387,20 +352,13 @@ static void run_settings() {
                 if (*s.value < s.hi) (*s.value)++;
             } else if (sel == TOGGLE_ROW) {
                 g_multi_pair ^= 1;
-<<<<<<< HEAD
             } else if (sel == LOG_TRANSFER_ROW) {
                 g_show_transfer ^= 1;
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
             } else {
                 preset_cursor = (preset_cursor + 1) % PRESET_COUNT;
             }
 
-<<<<<<< HEAD
         } else if (key >= '1' && key <= '5') {
-=======
-        } else if (key >= '1' && key <= '4') {
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
             sel = key - '1';                                    // jump to row
 
         } else if (key == 13) {                                 // Enter
@@ -408,11 +366,8 @@ static void run_settings() {
                 apply_preset(preset_cursor);
             } else if (sel == TOGGLE_ROW) {
                 g_multi_pair ^= 1;
-<<<<<<< HEAD
             } else if (sel == LOG_TRANSFER_ROW) {
                 g_show_transfer ^= 1;
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
             }
 
         } else if (key == 27) {                                 // Esc: exit
@@ -426,7 +381,6 @@ static void run_settings() {
 // ============================================================================
 static void run_attack(int idx) {
     switch (idx) {
-<<<<<<< HEAD
         case 1: {   // Option 2: GPU MITM
 #ifdef HAVE_CUDA
             CrackResult r = run_gpu_mitm(g_mitm_bits, g_multi_pair != 0, g_show_transfer != 0);
@@ -439,8 +393,6 @@ static void run_attack(int idx) {
 #endif
             break;
         }
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
 
         case 5: {   // Option 6: DES GPU Brute-Force
 #ifdef HAVE_CUDA
@@ -455,7 +407,6 @@ static void run_attack(int idx) {
             break;
         }
 
-<<<<<<< HEAD
         case 6: {   // Option 7: GPU Throughput + AES
 #ifdef HAVE_CUDA
             // Use 2^g_des_bits keys for throughput test
@@ -472,8 +423,6 @@ static void run_attack(int idx) {
             break;
         }
 
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
         default:
             run_stub(idx);
             break;
@@ -523,26 +472,16 @@ static void run_loop() {
         } else if (key == -2) {
             selected = (selected + 1) % MENU_COUNT;
         } else if (key == 13) {
-<<<<<<< HEAD
             if (selected == 9) { ui_clear(); do_save_and_exit(); return; }
             if (selected == 8) { run_settings(); ui_clear(); continue; }
-=======
-            if (selected == 9) { do_save_and_exit(); return; }
-            if (selected == 8) { run_settings(); continue; }   // settings: own loop, no press-enter
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
             ui_clear();
             ui_print_banner();
             run_attack(selected);
             ui_press_enter();
         } else if (key >= '0' && key <= '9') {
             int idx = (key == '0') ? 9 : (key - '1');
-<<<<<<< HEAD
             if (idx == 9) { ui_clear(); do_save_and_exit(); return; }
             if (idx == 8) { run_settings(); ui_clear(); continue; }
-=======
-            if (idx == 9) { do_save_and_exit(); return; }
-            if (idx == 8) { run_settings(); continue; }        // settings: own loop, no press-enter
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
             selected = idx;
             ui_clear();
             ui_print_banner();
@@ -555,10 +494,7 @@ static void run_loop() {
 // ============================================================================
 int main() {
     ui_init();
-<<<<<<< HEAD
     des_cpu_init();   // pre-compute SP-box table for CPU DES engine
-=======
->>>>>>> ac943c2876f3030d6ee4839b44fda038d731b6f8
     run_loop();
     return 0;
 }

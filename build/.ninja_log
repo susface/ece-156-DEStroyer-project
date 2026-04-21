@@ -1,9 +1,17 @@
 # ninja log v6
-35	920	7980628651318065	CMakeFiles/mitm_2des.dir/src/progress.cpp.obj	e0cb457f3b7f8e14
-25	630	7980628651211981	CMakeFiles/mitm_2des.dir/src/ui.cpp.obj	3eed47be42e05c19
-30	993	7980628651266647	CMakeFiles/mitm_2des.dir/src/benchmark.cpp.obj	dd1b00468ef77f43
-19	942	7980628651161780	CMakeFiles/mitm_2des.dir/src/main.cpp.obj	4f992e53ac9a9df2
-28	644	7980629519001599	CMakeFiles/mitm_2des.dir/src/ui.cpp.obj	d28af500a46ea2d5
-39	861	7980629519116766	CMakeFiles/mitm_2des.dir/src/progress.cpp.obj	dd45fb805a541049
-22	896	7980629518951594	CMakeFiles/mitm_2des.dir/src/main.cpp.obj	63535ca246c28a4b
-33	972	7980629519061605	CMakeFiles/mitm_2des.dir/src/benchmark.cpp.obj	eb4a20130d454dd9
+110	311	7984392028272542	CMakeFiles/mitm_2des.dir/src/des_cpu.cpp.obj	ca64a13d46e12bea
+99	1034	7984392028145105	CMakeFiles/mitm_2des.dir/src/benchmark.cpp.obj	7fba9f9537ec1468
+92	656	7984392028074748	CMakeFiles/mitm_2des.dir/src/ui.cpp.obj	24216f175c289734
+105	940	7984392028202093	CMakeFiles/mitm_2des.dir/src/progress.cpp.obj	820b8b995b0d84e6
+118	1029	7984392028327920	CMakeFiles/mitm_2des.dir/src/mitm_cpu.cpp.obj	6014699578bf41d1
+81	979	7984392027964958	CMakeFiles/mitm_2des.dir/src/main.cpp.obj	822341c337a8626b
+52449	52588	7984392551646169	mitm_2des.exe	ed38ec7f3b64ee2a
+123	52448	7984392028386967	CMakeFiles/mitm_2des.dir/src/des_gpu.cu.obj	2f526e215f926ccd
+91	342	7984395926728694	CMakeFiles/mitm_2des.dir/src/des_cpu.cpp.obj	ca64a13d46e12bea
+74	663	7984395926492399	CMakeFiles/mitm_2des.dir/src/ui.cpp.obj	24216f175c289734
+85	901	7984395926596694	CMakeFiles/mitm_2des.dir/src/progress.cpp.obj	820b8b995b0d84e6
+67	964	7984395926409499	CMakeFiles/mitm_2des.dir/src/main.cpp.obj	822341c337a8626b
+106	995	7984395926805356	CMakeFiles/mitm_2des.dir/src/mitm_cpu.cpp.obj	6014699578bf41d1
+80	1000	7984395926546595	CMakeFiles/mitm_2des.dir/src/benchmark.cpp.obj	7fba9f9537ec1468
+112	43958	7984395926987233	CMakeFiles/mitm_2des.dir/src/des_gpu.cu.obj	2f526e215f926ccd
+43960	44093	7984396365346408	mitm_2des.exe	ed38ec7f3b64ee2a

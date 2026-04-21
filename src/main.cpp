@@ -381,6 +381,12 @@ static void run_settings() {
 // ============================================================================
 static void run_attack(int idx) {
     switch (idx) {
+        case 0: {   // Option 1: CPU MITM
+            CrackResult r = run_cpu_mitm(g_mitm_bits, g_multi_pair != 0);
+            Benchmark::record(r);
+            break;
+        }
+
         case 1: {   // Option 2: GPU MITM
 #ifdef HAVE_CUDA
             CrackResult r = run_gpu_mitm(g_mitm_bits, g_multi_pair != 0, g_show_transfer != 0);
@@ -391,6 +397,12 @@ static void run_attack(int idx) {
             printf(MENU_INDENT DIM
                    "  Rebuild with a CUDA toolkit installed.\n\n" RESET);
 #endif
+            break;
+        }
+
+        case 3: {   // Option 4: CPU Brute-Force (Double-DES)
+            CrackResult r = run_cpu_bruteforce(g_compare_bits, g_multi_pair != 0);
+            Benchmark::record(r);
             break;
         }
 

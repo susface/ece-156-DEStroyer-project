@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18...4.2)
+cmake_minimum_required(VERSION 3.18...4.3)
 
 # =============================================================================
 # CUDA architecture MUST be set before project() -- CMake 4.0+ requirement.
@@ -53,6 +53,8 @@ set(SOURCES
     src/ui.cpp
     src/benchmark.cpp
     src/progress.cpp
+    src/des_cpu.cpp      # CPU DES/2DES engine (Jose)
+    src/mitm_cpu.cpp     # CPU MITM + Brute-Force attacks (Armanjit)
 )
 
 if(HAVE_CUDA)
@@ -61,9 +63,20 @@ if(HAVE_CUDA)
 endif()
 
 add_executable(mitm_2des ${SOURCES})
-target_include_directories(mitm_2des PRIVATE include)
+target_include_directories(mitm_2des PRIVATE
+    include
+    thrust-shim
+)
 
 if(HAVE_CUDA)
     # Disable separable compilation — not needed for a single TU kernel
     set_target_properties(mitm_2des PROPERTIES CUDA_SEPARABLE_COMPILATION OFF)
+
+    # CCCL (Thrust/CUB) uses variadic macros that break the traditional MSVC
+    # preprocessor when multiple SM architectures are compiled simultaneously.
+    # /Zc:preprocessor enables the conforming preprocessor which handles them.
+    if(MSVC)
+        target_compile_options(mitm_2des PRIVATE
+            $<$<COMPILE_LANGUAGE:CUDA>:-Xcompiler=/Zc:preprocessor>)
+    endif()
 endif()

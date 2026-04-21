@@ -71,6 +71,7 @@ events:
       - "C:/Users/trigu/.dotnet/tools/"
       - "C:/altera_standard/25.1std/questa_fse/win64/"
       - "C:/altera_standard/25.1std/questa_fe/win64/"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -454,6 +455,15 @@ events:
       - "C:/altera_standard/25.1std/questa_fe/win64/samu.com"
       - "C:/altera_standard/25.1std/questa_fe/win64/samu.exe"
       - "C:/altera_standard/25.1std/questa_fe/win64/samu"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/ninja-build.com"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/ninja-build.exe"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/ninja-build"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/ninja.com"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/ninja.exe"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/ninja"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/samu.com"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/samu.exe"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/samu"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ninja-build.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ninja-build.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ninja-build"
@@ -512,6 +522,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -599,6 +610,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -628,7 +640,7 @@ events:
       
       The output was:
       0
-      #$ PATH=C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn;C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\bin\\NETFX 4.8 Tools\\x64\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\FSharp\\Tools;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64;C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\x64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin;;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\Go\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2026.1.1\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\trigu\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\trigu\\go\\bin;C:\\Users\\trigu\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\trigu\\.dotnet\\tools;C:\\altera_standard\\25.1std\\questa_fse\\win64;C:\\altera_standard\\25.1std\\questa_fe\\win64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg
+      #$ PATH=C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn;C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\bin\\NETFX 4.8 Tools\\x64\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\FSharp\\Tools;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64;C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\x64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin;;;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\Go\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2026.1.1\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\trigu\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\trigu\\go\\bin;C:\\Users\\trigu\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\trigu\\.dotnet\\tools;C:\\altera_standard\\25.1std\\questa_fse\\win64;C:\\altera_standard\\25.1std\\questa_fe\\win64;C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg
       #$ _NVVM_BRANCH_=nvvm
       #$ _SPACE_= 
       #$ _CUDART_=cudart
@@ -642,7 +654,7 @@ events:
       #$ TOP=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/..
       #$ CICC_PATH=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../nvvm/bin
       #$ NVVMIR_LIBRARY_DIR=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../nvvm/libdevice
-      #$ PATH=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../nvvm/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn;C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\bin\\NETFX 4.8 Tools\\x64\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\FSharp\\Tools;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64;C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\x64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin;;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\Go\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2026.1.1\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\trigu\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\trigu\\go\\bin;C:\\Users\\trigu\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\trigu\\.dotnet\\tools;C:\\altera_standard\\25.1std\\questa_fse\\win64;C:\\altera_standard\\25.1std\\questa_fe\\win64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg
+      #$ PATH=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../nvvm/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn;C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\bin\\NETFX 4.8 Tools\\x64\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\FSharp\\Tools;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64;C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\x64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin;;;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\Go\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2026.1.1\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\trigu\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\trigu\\go\\bin;C:\\Users\\trigu\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\trigu\\.dotnet\\tools;C:\\altera_standard\\25.1std\\questa_fse\\win64;C:\\altera_standard\\25.1std\\questa_fe\\win64;C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg
       #$ INCLUDES="-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"  
       #$ SYSTEM_INCLUDES= 
       #$ LIBRARIES=  "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"
@@ -653,14 +665,14 @@ events:
       #$ resource file tmp/CMakeCUDACompilerId.cpp4.ii.res: [-D__CUDA_ARCH_LIST__=750 -nologo -E -TP -EHsc -D__CUDACC__ -D__NVCC__  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"      -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=78 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -FI "cuda_runtime.h" "CMakeCUDACompilerId.cu" ]
       #$ cl.exe @"tmp/CMakeCUDACompilerId.cpp4.ii.res" > "tmp/CMakeCUDACompilerId.cpp4.ii" 
       CMakeCUDACompilerId.cu
-      #$ cudafe++ --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" 
+      #$ cudafe++ --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" 
       #$ resource file tmp/CMakeCUDACompilerId.cpp1.ii.res: [-D__CUDA_ARCH__=750 -D__CUDA_ARCH_LIST__=750 -nologo -E -TP  -DCUDA_DOUBLE_MATH_FUNCTIONS -EHsc -D__CUDACC__ -D__NVCC__  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"      -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=78 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -FI "cuda_runtime.h" "CMakeCUDACompilerId.cu" ]
       #$ cl.exe @"tmp/CMakeCUDACompilerId.cpp1.ii.res" > "tmp/CMakeCUDACompilerId.cpp1.ii" 
       CMakeCUDACompilerId.cu
-      #$ ""%CICC_PATH%\\cicc" --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed  -arch compute_75 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c"  -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx""
+      #$ ""%CICC_PATH%\\cicc" --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed  -arch compute_75 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c"  -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx""
       #$ ptxas -arch=sm_75 -m64 "tmp/CMakeCUDACompilerId.ptx"  -o "tmp/CMakeCUDACompilerId.sm_75.cubin" 
       #$ fatbinary --create="tmp/CMakeCUDACompilerId.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " "--image3=kind=elf,sm=75,file=tmp/CMakeCUDACompilerId.sm_75.cubin" "--image3=kind=ptx,sm=75,file=tmp/CMakeCUDACompilerId.ptx" --embedded-fatbin="tmp/CMakeCUDACompilerId.fatbin.c" 
-      #$ resource file tmp/CMakeCUDACompilerId.obj.res: [-D__CUDA_ARCH__=750 -D__CUDA_ARCH_LIST__=750 -nologo -c -TP  -DCUDA_DOUBLE_MATH_FUNCTIONS -EHsc "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"     "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.cudafe1.cpp" ]
+      #$ resource file tmp/CMakeCUDACompilerId.obj.res: [-D__CUDA_ARCH__=750 -D__CUDA_ARCH_LIST__=750 -nologo -c -TP  -DCUDA_DOUBLE_MATH_FUNCTIONS -EHsc "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"     "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.cudafe1.cpp" ]
       #$ cl.exe @"tmp/CMakeCUDACompilerId.obj.res" -Fo"tmp/CMakeCUDACompilerId.obj" 
       CMakeCUDACompilerId.cudafe1.cpp
       #$ resource file tmp/a_dlink.sm_75.cubin.optf: [-m64 --arch=sm_75 --register-link-binaries="tmp/a_dlink.reg.c"    "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64" -cpu-arch=X86_64 "tmp/CMakeCUDACompilerId.obj"  cudadevrt.lib  -o "tmp/a_dlink.sm_75.cubin"]
@@ -669,14 +681,14 @@ events:
       #$ resource file tmp/a_dlink.obj.res: [-D__CUDA_ARCH_LIST__=750 -nologo -c -TP -EHsc -DFATBINFILE="\\"tmp/a_dlink.fatbin.c\\"" -DREGISTERLINKBINARYFILE="\\"tmp/a_dlink.reg.c\\""  -I. -D__NV_EXTRA_INITIALIZATION= -D__NV_EXTRA_FINALIZATION= -D__CUDA_INCLUDE_COMPILER_INTERNAL_HEADERS__  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"      -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=78 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\crt\\link.stub" ]
       #$ cl.exe @"tmp/a_dlink.obj.res" -Fo"tmp/a_dlink.obj" 
       link.stub
-      #$ resource file tmp/a.exe.res: [-D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib]
+      #$ resource file tmp/a.exe.res: [-D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib]
       #$ cl.exe @"tmp/a.exe.res" -Fe"a.exe" 
       
       
       Compilation of the CUDA compiler identification source "CMakeCUDACompilerId.cu" produced "a.exe"
       
       The CUDA compiler identification is NVIDIA, found in:
-        C:/Users/trigu/Downloads/ece-156-DEStroyer-project/build/CMakeFiles/4.3.1/CompilerIdCUDA/a.exe
+        C:/Users/trigu/source/repos/ece-156-DEStroyer-project/build/CMakeFiles/4.3.1/CompilerIdCUDA/a.exe
       The host compiler identification is MSVC
       
   -
@@ -765,6 +777,7 @@ events:
       - "C:/Users/trigu/.dotnet/tools/"
       - "C:/altera_standard/25.1std/questa_fse/win64/"
       - "C:/altera_standard/25.1std/questa_fe/win64/"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -816,6 +829,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -884,6 +898,7 @@ events:
       - "C:/Users/trigu/.dotnet/tools/"
       - "C:/altera_standard/25.1std/questa_fse/win64/"
       - "C:/altera_standard/25.1std/questa_fe/win64/"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -1015,6 +1030,9 @@ events:
       - "C:/altera_standard/25.1std/questa_fe/win64/lld-link.com"
       - "C:/altera_standard/25.1std/questa_fe/win64/lld-link.exe"
       - "C:/altera_standard/25.1std/questa_fe/win64/lld-link"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/lld-link.com"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/lld-link.exe"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/lld-link"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link"
@@ -1072,6 +1090,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1138,6 +1157,7 @@ events:
       - "C:/Users/trigu/.dotnet/tools/"
       - "C:/altera_standard/25.1std/questa_fse/win64/"
       - "C:/altera_standard/25.1std/questa_fe/win64/"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -1189,6 +1209,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1255,6 +1276,7 @@ events:
       - "C:/Users/trigu/.dotnet/tools/"
       - "C:/altera_standard/25.1std/questa_fse/win64/"
       - "C:/altera_standard/25.1std/questa_fe/win64/"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -1333,6 +1355,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1399,6 +1422,7 @@ events:
       - "C:/Users/trigu/.dotnet/tools/"
       - "C:/altera_standard/25.1std/questa_fse/win64/"
       - "C:/altera_standard/25.1std/questa_fe/win64/"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -1450,6 +1474,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1462,7 +1487,7 @@ events:
       - "CMakeLists.txt:19 (project)"
     message: |
       Parsed CUDA nvcc implicit link information:
-        found 'PATH=' string: [C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../nvvm/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn;C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\bin\\NETFX 4.8 Tools\\x64\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\FSharp\\Tools;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64;C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\x64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin;;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\Go\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2026.1.1\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\trigu\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\trigu\\go\\bin;C:\\Users\\trigu\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\trigu\\.dotnet\\tools;C:\\altera_standard\\25.1std\\questa_fse\\win64;C:\\altera_standard\\25.1std\\questa_fe\\win64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg]
+        found 'PATH=' string: [C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../nvvm/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn;C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\bin\\NETFX 4.8 Tools\\x64\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\FSharp\\Tools;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64;C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\x64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin;;;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\Go\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2026.1.1\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\trigu\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\trigu\\go\\bin;C:\\Users\\trigu\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\trigu\\.dotnet\\tools;C:\\altera_standard\\25.1std\\questa_fse\\win64;C:\\altera_standard\\25.1std\\questa_fe\\win64;C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg]
         found 'LIBRARIES=' string: ["/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"]
         found 'INCLUDES=' string: ["-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"  ]
         found 'SYSTEM_INCLUDES=' string: []
@@ -1471,14 +1496,14 @@ events:
         considering line: [resource file tmp/CMakeCUDACompilerId.cpp4.ii.res: [-D__CUDA_ARCH_LIST__=750 -nologo -E -TP -EHsc -D__CUDACC__ -D__NVCC__  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"      -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=78 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -FI "cuda_runtime.h" "CMakeCUDACompilerId.cu" ]]
         considering line: [cl.exe @"tmp/CMakeCUDACompilerId.cpp4.ii.res" > "tmp/CMakeCUDACompilerId.cpp4.ii" ]
         considering line: [CMakeCUDACompilerId.cu]
-        considering line: [cudafe++ --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" ]
+        considering line: [cudafe++ --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" ]
         considering line: [resource file tmp/CMakeCUDACompilerId.cpp1.ii.res: [-D__CUDA_ARCH__=750 -D__CUDA_ARCH_LIST__=750 -nologo -E -TP  -DCUDA_DOUBLE_MATH_FUNCTIONS -EHsc -D__CUDACC__ -D__NVCC__  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"      -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=78 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -FI "cuda_runtime.h" "CMakeCUDACompilerId.cu" ]]
         considering line: [cl.exe @"tmp/CMakeCUDACompilerId.cpp1.ii.res" > "tmp/CMakeCUDACompilerId.cpp1.ii" ]
         considering line: [CMakeCUDACompilerId.cu]
-        considering line: [""%CICC_PATH%\\cicc" --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed  -arch compute_75 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c"  -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx""]
+        considering line: [""%CICC_PATH%\\cicc" --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed  -arch compute_75 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c"  -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx""]
         considering line: [ptxas -arch=sm_75 -m64 "tmp/CMakeCUDACompilerId.ptx"  -o "tmp/CMakeCUDACompilerId.sm_75.cubin" ]
         considering line: [fatbinary --create="tmp/CMakeCUDACompilerId.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " "--image3=kind=elf,sm=75,file=tmp/CMakeCUDACompilerId.sm_75.cubin" "--image3=kind=ptx,sm=75,file=tmp/CMakeCUDACompilerId.ptx" --embedded-fatbin="tmp/CMakeCUDACompilerId.fatbin.c" ]
-        considering line: [resource file tmp/CMakeCUDACompilerId.obj.res: [-D__CUDA_ARCH__=750 -D__CUDA_ARCH_LIST__=750 -nologo -c -TP  -DCUDA_DOUBLE_MATH_FUNCTIONS -EHsc "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"     "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.cudafe1.cpp" ]]
+        considering line: [resource file tmp/CMakeCUDACompilerId.obj.res: [-D__CUDA_ARCH__=750 -D__CUDA_ARCH_LIST__=750 -nologo -c -TP  -DCUDA_DOUBLE_MATH_FUNCTIONS -EHsc "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"     "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.cudafe1.cpp" ]]
         considering line: [cl.exe @"tmp/CMakeCUDACompilerId.obj.res" -Fo"tmp/CMakeCUDACompilerId.obj" ]
         considering line: [CMakeCUDACompilerId.cudafe1.cpp]
         considering line: [resource file tmp/a_dlink.sm_75.cubin.optf: [-m64 --arch=sm_75 --register-link-binaries="tmp/a_dlink.reg.c"    "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64" -cpu-arch=X86_64 "tmp/CMakeCUDACompilerId.obj"  cudadevrt.lib  -o "tmp/a_dlink.sm_75.cubin"]]
@@ -1489,20 +1514,20 @@ events:
         considering line: [resource file tmp/a_dlink.obj.res: [-D__CUDA_ARCH_LIST__=750 -nologo -c -TP -EHsc -DFATBINFILE="\\"tmp/a_dlink.fatbin.c\\"" -DREGISTERLINKBINARYFILE="\\"tmp/a_dlink.reg.c\\""  -I. -D__NV_EXTRA_INITIALIZATION= -D__NV_EXTRA_FINALIZATION= -D__CUDA_INCLUDE_COMPILER_INTERNAL_HEADERS__  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"      -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=78 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\crt\\link.stub" ]]
         considering line: [cl.exe @"tmp/a_dlink.obj.res" -Fo"tmp/a_dlink.obj" ]
         considering line: [link.stub]
-        considering line: [resource file tmp/a.exe.res: [-D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib]]
-          extracted link line: [resource file tmp/a.exe.res: [-D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib]]
+        considering line: [resource file tmp/a.exe.res: [-D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib]]
+          extracted link line: [resource file tmp/a.exe.res: [-D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib]]
         considering line: [cl.exe @"tmp/a.exe.res" -Fe"a.exe" ]
-          extracted link line: [cl.exe -D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib -Fe"a.exe" ]
+          extracted link line: [cl.exe -D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib -Fe"a.exe" ]
         considering line: []
       
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        link line: [cuda-fake-ld cl.exe -D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib -Fe"a.exe" ]
+        link line: [cuda-fake-ld cl.exe -D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib -Fe"a.exe" ]
           arg [cuda-fake-ld] ==> ignore
           arg [cl.exe] ==> recognize MSVC cl
           arg [-D__CUDA_ARCH_LIST__=750] ==> ignore
           arg [-nologo] ==> ignore
-          arg [C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj] ==> ignore
-          arg [C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj] ==> ignore
+          arg [C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj] ==> ignore
+          arg [C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj] ==> ignore
           arg [-link] ==> ignore MSVC cl option
           arg [-INCREMENTAL:NO] ==> ignore
           arg [/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64] ==> dir [C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64]
@@ -1524,7 +1549,7 @@ events:
       - "CMakeLists.txt:19 (project)"
     message: |
       Parsed CUDA nvcc include information:
-        found 'PATH=' string: [C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../nvvm/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn;C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\bin\\NETFX 4.8 Tools\\x64\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\FSharp\\Tools;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64;C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\x64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin;;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\Go\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2026.1.1\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\trigu\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\trigu\\go\\bin;C:\\Users\\trigu\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\trigu\\.dotnet\\tools;C:\\altera_standard\\25.1std\\questa_fse\\win64;C:\\altera_standard\\25.1std\\questa_fe\\win64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg]
+        found 'PATH=' string: [C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../nvvm/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn;C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\bin\\NETFX 4.8 Tools\\x64\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\FSharp\\Tools;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64;C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\x64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin;;;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\Go\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2026.1.1\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Python314\\;C:\\Users\\trigu\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\trigu\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\trigu\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\trigu\\go\\bin;C:\\Users\\trigu\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\trigu\\.dotnet\\tools;C:\\altera_standard\\25.1std\\questa_fse\\win64;C:\\altera_standard\\25.1std\\questa_fe\\win64;C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe;C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg]
         found 'LIBRARIES=' string: ["/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"]
         found 'INCLUDES=' string: ["-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"  ]
         found 'SYSTEM_INCLUDES=' string: []
@@ -1533,14 +1558,14 @@ events:
         considering line: [resource file tmp/CMakeCUDACompilerId.cpp4.ii.res: [-D__CUDA_ARCH_LIST__=750 -nologo -E -TP -EHsc -D__CUDACC__ -D__NVCC__  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"      -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=78 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -FI "cuda_runtime.h" "CMakeCUDACompilerId.cu" ]]
         considering line: [cl.exe @"tmp/CMakeCUDACompilerId.cpp4.ii.res" > "tmp/CMakeCUDACompilerId.cpp4.ii" ]
         considering line: [CMakeCUDACompilerId.cu]
-        considering line: [cudafe++ --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" ]
+        considering line: [cudafe++ --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" ]
         considering line: [resource file tmp/CMakeCUDACompilerId.cpp1.ii.res: [-D__CUDA_ARCH__=750 -D__CUDA_ARCH_LIST__=750 -nologo -E -TP  -DCUDA_DOUBLE_MATH_FUNCTIONS -EHsc -D__CUDACC__ -D__NVCC__  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"      -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=78 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -FI "cuda_runtime.h" "CMakeCUDACompilerId.cu" ]]
         considering line: [cl.exe @"tmp/CMakeCUDACompilerId.cpp1.ii.res" > "tmp/CMakeCUDACompilerId.cpp1.ii" ]
         considering line: [CMakeCUDACompilerId.cu]
-        considering line: [""%CICC_PATH%\\cicc" --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed  -arch compute_75 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c"  -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx""]
+        considering line: [""%CICC_PATH%\\cicc" --ms_c++14 --static-host-stub --device-hidden-visibility --microsoft_version=1950 --msvc_target_version=1950 --compiler_bindir "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/../../../../../../.." --sdk_dir "C:/Program Files (x86)/Windows Kits/10/" --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\CMakeCUDACompilerId.cu" --allow_managed  -arch compute_75 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c"  -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx""]
         considering line: [ptxas -arch=sm_75 -m64 "tmp/CMakeCUDACompilerId.ptx"  -o "tmp/CMakeCUDACompilerId.sm_75.cubin" ]
         considering line: [fatbinary --create="tmp/CMakeCUDACompilerId.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " "--image3=kind=elf,sm=75,file=tmp/CMakeCUDACompilerId.sm_75.cubin" "--image3=kind=ptx,sm=75,file=tmp/CMakeCUDACompilerId.ptx" --embedded-fatbin="tmp/CMakeCUDACompilerId.fatbin.c" ]
-        considering line: [resource file tmp/CMakeCUDACompilerId.obj.res: [-D__CUDA_ARCH__=750 -D__CUDA_ARCH_LIST__=750 -nologo -c -TP  -DCUDA_DOUBLE_MATH_FUNCTIONS -EHsc "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"     "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.cudafe1.cpp" ]]
+        considering line: [resource file tmp/CMakeCUDACompilerId.obj.res: [-D__CUDA_ARCH__=750 -D__CUDA_ARCH_LIST__=750 -nologo -c -TP  -DCUDA_DOUBLE_MATH_FUNCTIONS -EHsc "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"     "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.cudafe1.cpp" ]]
         considering line: [cl.exe @"tmp/CMakeCUDACompilerId.obj.res" -Fo"tmp/CMakeCUDACompilerId.obj" ]
         considering line: [CMakeCUDACompilerId.cudafe1.cpp]
         considering line: [resource file tmp/a_dlink.sm_75.cubin.optf: [-m64 --arch=sm_75 --register-link-binaries="tmp/a_dlink.reg.c"    "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64" -cpu-arch=X86_64 "tmp/CMakeCUDACompilerId.obj"  cudadevrt.lib  -o "tmp/a_dlink.sm_75.cubin"]]
@@ -1551,20 +1576,20 @@ events:
         considering line: [resource file tmp/a_dlink.obj.res: [-D__CUDA_ARCH_LIST__=750 -nologo -c -TP -EHsc -DFATBINFILE="\\"tmp/a_dlink.fatbin.c\\"" -DREGISTERLINKBINARYFILE="\\"tmp/a_dlink.reg.c\\""  -I. -D__NV_EXTRA_INITIALIZATION= -D__NV_EXTRA_FINALIZATION= -D__CUDA_INCLUDE_COMPILER_INTERNAL_HEADERS__  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../include/cccl"      -D__CUDACC_VER_MAJOR__=13 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=78 -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\bin\\crt\\link.stub" ]]
         considering line: [cl.exe @"tmp/a_dlink.obj.res" -Fo"tmp/a_dlink.obj" ]
         considering line: [link.stub]
-        considering line: [resource file tmp/a.exe.res: [-D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib]]
-          extracted link line: [resource file tmp/a.exe.res: [-D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib]]
+        considering line: [resource file tmp/a.exe.res: [-D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib]]
+          extracted link line: [resource file tmp/a.exe.res: [-D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib]]
         considering line: [cl.exe @"tmp/a.exe.res" -Fe"a.exe" ]
-          extracted link line: [cl.exe -D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib -Fe"a.exe" ]
+          extracted link line: [cl.exe -D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib -Fe"a.exe" ]
         considering line: []
       
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        link line: [cuda-fake-ld cl.exe -D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib -Fe"a.exe" ]
+        link line: [cuda-fake-ld cl.exe -D__CUDA_ARCH_LIST__=750 -nologo "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj" "C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib -Fe"a.exe" ]
           arg [cuda-fake-ld] ==> ignore
           arg [cl.exe] ==> recognize MSVC cl
           arg [-D__CUDA_ARCH_LIST__=750] ==> ignore
           arg [-nologo] ==> ignore
-          arg [C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj] ==> ignore
-          arg [C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj] ==> ignore
+          arg [C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\a_dlink.obj] ==> ignore
+          arg [C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\4.3.1\\CompilerIdCUDA\\tmp\\CMakeCUDACompilerId.obj] ==> ignore
           arg [-link] ==> ignore MSVC cl option
           arg [-INCREMENTAL:NO] ==> ignore
           arg [/LIBPATH:C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64] ==> dir [C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/../lib/x64]
@@ -1668,6 +1693,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1739,6 +1765,7 @@ events:
       - "C:/Users/trigu/.dotnet/tools/"
       - "C:/altera_standard/25.1std/questa_fse/win64/"
       - "C:/altera_standard/25.1std/questa_fe/win64/"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -1796,6 +1823,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1869,6 +1897,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1914,7 +1943,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/trigu/Downloads/ece-156-DEStroyer-project/build/CMakeFiles/4.3.1/CompilerIdCXX/CMakeCXXCompilerId.exe
+        C:/Users/trigu/source/repos/ece-156-DEStroyer-project/build/CMakeFiles/4.3.1/CompilerIdCXX/CMakeCXXCompilerId.exe
       
   -
     kind: "message-v1"
@@ -1926,7 +1955,7 @@ events:
     message: |
       Detecting CXX compiler /showIncludes prefix:
         main.c
-        Note: including file: C:\\Users\\trigu\\Downloads\\ece-156-DEStroyer-project\\build\\CMakeFiles\\ShowIncludes\\foo.h
+        Note: including file: C:\\Users\\trigu\\source\\repos\\ece-156-DEStroyer-project\\build\\CMakeFiles\\ShowIncludes\\foo.h
         
       Found prefix "Note: including file: "
   -
@@ -1993,6 +2022,7 @@ events:
       - "C:/Users/trigu/.dotnet/tools/"
       - "C:/altera_standard/25.1std/questa_fse/win64/"
       - "C:/altera_standard/25.1std/questa_fe/win64/"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -2124,6 +2154,9 @@ events:
       - "C:/altera_standard/25.1std/questa_fe/win64/lld-link.com"
       - "C:/altera_standard/25.1std/questa_fe/win64/lld-link.exe"
       - "C:/altera_standard/25.1std/questa_fe/win64/lld-link"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/lld-link.com"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/lld-link.exe"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/lld-link"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link"
@@ -2181,6 +2214,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -2249,6 +2283,7 @@ events:
       - "C:/Users/trigu/.dotnet/tools/"
       - "C:/altera_standard/25.1std/questa_fse/win64/"
       - "C:/altera_standard/25.1std/questa_fe/win64/"
+      - "C:/intelFPGA/20.1/modelsim_ase/win32aloem/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -2339,6 +2374,7 @@ events:
         - "C:\\Users\\trigu\\.dotnet\\tools"
         - "C:\\altera_standard\\25.1std\\questa_fse\\win64"
         - "C:\\altera_standard\\25.1std\\questa_fe\\win64"
+        - "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -2358,8 +2394,8 @@ events:
     checks:
       - "Detecting CUDA compiler ABI info"
     directories:
-      source: "C:/Users/trigu/Downloads/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-txygf0"
-      binary: "C:/Users/trigu/Downloads/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-txygf0"
+      source: "C:/Users/trigu/source/repos/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-vd8d22"
+      binary: "C:/Users/trigu/source/repos/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-vd8d22"
     cmakeVariables:
       CMAKE_CUDA_ARCHITECTURES: "75;86;89"
       CMAKE_CUDA_FLAGS: "-D_WINDOWS -Xcompiler=\" /EHsc\""
@@ -2371,10 +2407,10 @@ events:
       variable: "CMAKE_CUDA_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/trigu/Downloads/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-txygf0'
+        Change Dir: 'C:/Users/trigu/source/repos/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-vd8d22'
         
-        Run Build Command(s): C:/PROGRA~1/MICROS~3/18/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_37e3a
-        [1/2] C:\\PROGRA~1\\NVIDIA~2\\CUDA\\v13.2\\bin\\nvcc.exe -forward-unknown-to-host-compiler -D_MBCS  -D_WINDOWS -Xcompiler=" /EHsc"  -Xcompiler=" -Ob0 -Od" "--generate-code=arch=compute_75,code=[compute_75,sm_75]" "--generate-code=arch=compute_86,code=[compute_86,sm_86]" "--generate-code=arch=compute_89,code=[compute_89,sm_89]" -Xcompiler=-MDd -Xcompiler=-RTC1 -Xcompiler=-Zi   -Xcompiler=-v -MD -MT CMakeFiles\\cmTC_37e3a.dir\\CMakeCUDACompilerABI.cu.obj -MF CMakeFiles\\cmTC_37e3a.dir\\CMakeCUDACompilerABI.cu.obj.d -x cu -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCUDACompilerABI.cu" -o CMakeFiles\\cmTC_37e3a.dir\\CMakeCUDACompilerABI.cu.obj -Xcompiler=-FdCMakeFiles\\cmTC_37e3a.dir\\,-FS
+        Run Build Command(s): C:/PROGRA~1/MICROS~3/18/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_497c9
+        [1/2] C:\\PROGRA~1\\NVIDIA~2\\CUDA\\v13.2\\bin\\nvcc.exe -forward-unknown-to-host-compiler -D_MBCS  -D_WINDOWS -Xcompiler=" /EHsc"  -Xcompiler=" -Ob0 -Od" "--generate-code=arch=compute_75,code=[compute_75,sm_75]" "--generate-code=arch=compute_86,code=[compute_86,sm_86]" "--generate-code=arch=compute_89,code=[compute_89,sm_89]" -Xcompiler=-MDd -Xcompiler=-RTC1 -Xcompiler=-Zi   -Xcompiler=-v -MD -MT CMakeFiles\\cmTC_497c9.dir\\CMakeCUDACompilerABI.cu.obj -MF CMakeFiles\\cmTC_497c9.dir\\CMakeCUDACompilerABI.cu.obj.d -x cu -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCUDACompilerABI.cu" -o CMakeFiles\\cmTC_497c9.dir\\CMakeCUDACompilerABI.cu.obj -Xcompiler=-FdCMakeFiles\\cmTC_497c9.dir\\,-FS
         cl : Command line warning D9002 : ignoring unknown option '-v'
         CMakeCUDACompilerABI.cu
         cl : Command line warning D9002 : ignoring unknown option '-v'
@@ -2385,9 +2421,9 @@ events:
         CMakeCUDACompilerABI.cu
         CMakeCUDACompilerABI.cu
         cl : Command line warning D9002 : ignoring unknown option '-v'
-        tmpxft_000058a0_00000000-7_CMakeCUDACompilerABI.compute_89.cudafe1.cpp\x0d
+        tmpxft_00006910_00000000-7_CMakeCUDACompilerABI.compute_89.cudafe1.cpp\x0d
         C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCompilerCUDAArch.h(10): warning C4305: 'return': truncation from 'int' to 'bool'\x0d
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_37e3a.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_37e3a.dir\\CMakeCUDACompilerABI.cu.obj  /out:cmTC_37e3a.exe /implib:cmTC_37e3a.lib /pdb:cmTC_37e3a.pdb /version:0.0  -v /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/lib/x64" && cd ."
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_497c9.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_497c9.dir\\CMakeCUDACompilerABI.cu.obj  /out:cmTC_497c9.exe /implib:cmTC_497c9.lib /pdb:cmTC_497c9.pdb /version:0.0  -v /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/lib/x64" && cd ."
         
       exitCode: 0
   -
@@ -2411,10 +2447,10 @@ events:
       Parsed CUDA implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/trigu/Downloads/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-txygf0']
+        ignore line: [Change Dir: 'C:/Users/trigu/source/repos/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-vd8d22']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/PROGRA~1/MICROS~3/18/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_37e3a]
-        ignore line: [[1/2] C:\\PROGRA~1\\NVIDIA~2\\CUDA\\v13.2\\bin\\nvcc.exe -forward-unknown-to-host-compiler -D_MBCS  -D_WINDOWS -Xcompiler=" /EHsc"  -Xcompiler=" -Ob0 -Od" "--generate-code=arch=compute_75 code=[compute_75 sm_75]" "--generate-code=arch=compute_86 code=[compute_86 sm_86]" "--generate-code=arch=compute_89 code=[compute_89 sm_89]" -Xcompiler=-MDd -Xcompiler=-RTC1 -Xcompiler=-Zi   -Xcompiler=-v -MD -MT CMakeFiles\\cmTC_37e3a.dir\\CMakeCUDACompilerABI.cu.obj -MF CMakeFiles\\cmTC_37e3a.dir\\CMakeCUDACompilerABI.cu.obj.d -x cu -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCUDACompilerABI.cu" -o CMakeFiles\\cmTC_37e3a.dir\\CMakeCUDACompilerABI.cu.obj -Xcompiler=-FdCMakeFiles\\cmTC_37e3a.dir\\ -FS]
+        ignore line: [Run Build Command(s): C:/PROGRA~1/MICROS~3/18/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_497c9]
+        ignore line: [[1/2] C:\\PROGRA~1\\NVIDIA~2\\CUDA\\v13.2\\bin\\nvcc.exe -forward-unknown-to-host-compiler -D_MBCS  -D_WINDOWS -Xcompiler=" /EHsc"  -Xcompiler=" -Ob0 -Od" "--generate-code=arch=compute_75 code=[compute_75 sm_75]" "--generate-code=arch=compute_86 code=[compute_86 sm_86]" "--generate-code=arch=compute_89 code=[compute_89 sm_89]" -Xcompiler=-MDd -Xcompiler=-RTC1 -Xcompiler=-Zi   -Xcompiler=-v -MD -MT CMakeFiles\\cmTC_497c9.dir\\CMakeCUDACompilerABI.cu.obj -MF CMakeFiles\\cmTC_497c9.dir\\CMakeCUDACompilerABI.cu.obj.d -x cu -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCUDACompilerABI.cu" -o CMakeFiles\\cmTC_497c9.dir\\CMakeCUDACompilerABI.cu.obj -Xcompiler=-FdCMakeFiles\\cmTC_497c9.dir\\ -FS]
         ignore line: [cl : Command line warning D9002 : ignoring unknown option '-v']
         ignore line: [CMakeCUDACompilerABI.cu]
         ignore line: [cl : Command line warning D9002 : ignoring unknown option '-v']
@@ -2425,9 +2461,9 @@ events:
         ignore line: [CMakeCUDACompilerABI.cu]
         ignore line: [CMakeCUDACompilerABI.cu]
         ignore line: [cl : Command line warning D9002 : ignoring unknown option '-v']
-        ignore line: [tmpxft_000058a0_00000000-7_CMakeCUDACompilerABI.compute_89.cudafe1.cpp\x0d]
+        ignore line: [tmpxft_00006910_00000000-7_CMakeCUDACompilerABI.compute_89.cudafe1.cpp\x0d]
         ignore line: [C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCompilerCUDAArch.h(10): warning C4305: 'return': truncation from 'int' to 'bool'\x0d]
-        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_37e3a.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_37e3a.dir\\CMakeCUDACompilerABI.cu.obj  /out:cmTC_37e3a.exe /implib:cmTC_37e3a.lib /pdb:cmTC_37e3a.pdb /version:0.0  -v /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/lib/x64" && cd ."]
+        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_497c9.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_497c9.dir\\CMakeCUDACompilerABI.cu.obj  /out:cmTC_497c9.exe /implib:cmTC_497c9.lib /pdb:cmTC_497c9.pdb /version:0.0  -v /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/lib/x64" && cd ."]
         ignore line: []
         ignore line: []
         linker tool for 'CUDA': C:/PROGRA~1/MICROS~3/18/COMMUN~1/VC/Tools/MSVC/1450~1.357/bin/Hostx64/x64/link.exe
@@ -2457,8 +2493,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/trigu/Downloads/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-rwq4t6"
-      binary: "C:/Users/trigu/Downloads/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-rwq4t6"
+      source: "C:/Users/trigu/source/repos/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-xkgekf"
+      binary: "C:/Users/trigu/source/repos/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-xkgekf"
     cmakeVariables:
       CMAKE_CUDA_ARCHITECTURES: "75;86;89"
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
@@ -2470,11 +2506,11 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/trigu/Downloads/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-rwq4t6'
+        Change Dir: 'C:/Users/trigu/source/repos/ece-156-DEStroyer-project/build/CMakeFiles/CMakeScratch/TryCompile-xkgekf'
         
-        Run Build Command(s): C:/PROGRA~1/MICROS~3/18/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_36f7d
-        [1/2] C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_MBCS  /DWIN32 /D_WINDOWS /EHsc  /Ob0 /Od -MDd -RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_36f7d.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_36f7d.dir\\ /FS -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_36f7d.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_36f7d.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_36f7d.exe /implib:cmTC_36f7d.lib /pdb:cmTC_36f7d.pdb /version:0.0 -machine:x64 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/MICROS~3/18/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_bb3ed
+        [1/2] C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_MBCS  /DWIN32 /D_WINDOWS /EHsc  /Ob0 /Od -MDd -RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_bb3ed.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_bb3ed.dir\\ /FS -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_bb3ed.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_bb3ed.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_bb3ed.exe /implib:cmTC_bb3ed.lib /pdb:cmTC_bb3ed.pdb /version:0.0 -machine:x64 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -

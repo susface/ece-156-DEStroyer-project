@@ -215,7 +215,7 @@ if defined CUDA_DIR goto :cuda_add
 
 for %%L in (C D E F G H I J K L M N O P Q R S T U V W X Y Z) do (
     if not defined CUDA_DIR if exist "%%L:\" (
-        for %%X in (13.1 13.0 12.9 12.8 12.7 12.6 12.5 12.4 12.3 12.2 12.1 12.0 11.8 11.7) do (
+        for %%X in (13.2 13.1 13.0 12.9 12.8 12.7 12.6 12.5 12.4 12.3 12.2 12.1 12.0 11.8 11.7) do (
             if not defined CUDA_DIR if exist "%%L:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v%%X\bin\nvcc.exe" (
                 set "CUDA_DIR=%%L:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v%%X\bin"
             )
@@ -231,8 +231,21 @@ if defined CUDA_DIR (
 )
 :nvcc_ok
 
+:: CUDA 13.x does not support VS 2026 (MSVC 19.50+). If CUDA is present and
+:: vswhere picked VS 2026 as latest, downgrade to VS 2022 for the build.
+if defined NVCC_PATH if defined VSWHERE (
+    set "_VCVARS22="
+    for /f "usebackq tokens=*" %%I in (`"!VSWHERE!" -version "[17,18)" -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath 2^>nul`) do (
+        if not defined _VCVARS22 if exist "%%I\VC\Auxiliary\Build\vcvarsall.bat" set "_VCVARS22=%%I\VC\Auxiliary\Build\vcvarsall.bat"
+    )
+    if defined _VCVARS22 (
+        echo Switching to VS 2022 for CUDA compatibility: !_VCVARS22!
+        set "VCVARS=!_VCVARS22!"
+    )
+)
+
 where cl >nul 2>&1
-if not errorlevel 1 goto :env_ok
+if not errorlevel 1 if defined LIB goto :env_ok
 if not defined VCVARS goto :env_ok
 echo Setting up MSVC environment...
 call "!VCVARS!" x64
@@ -260,6 +273,13 @@ set "GCC_CXX_FLAGS=-DCMAKE_CXX_FLAGS_RELEASE=-O2 -DNDEBUG"
 set "CUDA_FLAG="
 if defined NVCC_PATH set "CUDA_FLAG=-DCMAKE_CUDA_COMPILER=!NVCC_PATH!"
 
+:: If we switched to VS 2022 for CUDA, also pin the host compiler explicitly
+:: so CMake doesn't accidentally pick up any VS 2026 cl.exe from PATH.
+set "CUDA_HOST_FLAG="
+if defined _VCVARS22 (
+    for /f "delims=" %%C in ('where cl 2^>nul') do if not defined CUDA_HOST_FLAG set "CUDA_HOST_FLAG=-DCMAKE_CUDA_HOST_COMPILER=%%C"
+)
+
 if not defined VS_GEN goto :skip_vs
 echo.
 echo === Trying generator: !VS_GEN! ===
@@ -284,7 +304,7 @@ echo.
 if exist CMakeCache.txt del CMakeCache.txt >nul 2>&1
 if exist CMakeFiles rmdir /s /q CMakeFiles >nul 2>&1
 if defined CUDA_FLAG (
-    "!CMAKE_EXE!" "!SRC_DIR!." -G "Ninja" -DCMAKE_BUILD_TYPE=!BUILD_TYPE! "!CUDA_FLAG!"
+    "!CMAKE_EXE!" "!SRC_DIR!." -G "Ninja" -DCMAKE_BUILD_TYPE=!BUILD_TYPE! "!CUDA_FLAG!" !CUDA_HOST_FLAG!
 ) else (
     "!CMAKE_EXE!" "!SRC_DIR!." -G "Ninja" -DCMAKE_BUILD_TYPE=!BUILD_TYPE!
 )

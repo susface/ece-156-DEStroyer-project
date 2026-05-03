@@ -25,25 +25,11 @@ static const char* OPTION_NAMES[] = {
     "CPU vs GPU MITM",
     "Brute-Force",
     "MITM vs Brute-Force",
-    "DES GPU Brute-Force",   // index 5 — implemented
+    "DES GPU Brute-Force",  
     "GPU Throughput + AES",
     "Complexity Analysis",
-    "Settings", // done 
+    "Settings",
 };
-
-// ============================================================================
-// Stub screen for unimplemented options
-// ============================================================================
-static void run_stub(int idx) {
-    printf("\n");
-    printf(MENU_INDENT BCYAN "+----------------------------------------------------------+\n" RESET);
-    printf(MENU_INDENT BCYAN "|                                                          |\n" RESET);
-    printf(MENU_INDENT BCYAN "|  " BWHITE "%-56s" BCYAN "|\n" RESET, OPTION_NAMES[idx]);
-    printf(MENU_INDENT BCYAN "|                                                          |\n" RESET);
-    printf(MENU_INDENT BCYAN "|  " BYELLOW "%-56s" BCYAN "|\n" RESET, "Not yet implemented.");
-    printf(MENU_INDENT BCYAN "|                                                          |\n" RESET);
-    printf(MENU_INDENT BCYAN "+----------------------------------------------------------+\n" RESET);
-}
 
 // ============================================================================
 // Settings sub-menu
@@ -400,9 +386,19 @@ static void run_attack(int idx) {
             break;
         }
 
+        case 2: {   // Option 3: CPU vs GPU MITM
+            run_cpu_vs_gpu_mitm(g_mitm_bits, g_multi_pair != 0, g_show_transfer != 0);
+            break;
+        }
+
         case 3: {   // Option 4: CPU Brute-Force (Double-DES)
             CrackResult r = run_cpu_bruteforce(g_compare_bits, g_multi_pair != 0);
             Benchmark::record(r);
+            break;
+        }
+
+        case 4: {   // Option 5: MITM vs Brute-Force (CPU)
+            run_mitm_vs_bruteforce(g_mitm_bits, g_compare_bits, g_multi_pair != 0);
             break;
         }
 
@@ -435,9 +431,11 @@ static void run_attack(int idx) {
             break;
         }
 
-        default:
-            run_stub(idx);
+        case 7: {   // Option 8: Complexity Analysis
+            run_complexity_analysis(g_multi_pair != 0);
             break;
+        }
+
     }
 }
 

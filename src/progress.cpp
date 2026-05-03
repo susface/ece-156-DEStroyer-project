@@ -31,12 +31,6 @@ static void fmt_keys(char* buf, size_t buf_sz, uint64_t n) {
 }
 
 // ── draw ──────────────────────────────────────────────────────────────────────
-// Redraws the progress bar on the current line using \r.
-// Layout (example, bar_width=38):
-//
-//   [████████████████████░░░░░░░░░░░░░░░░░░]  62.5%  167.8M/268.4M  2.8s  247.3M k/s
-//
-// Indent of 2 spaces matches MENU_INDENT.
 
 static void draw_bar(Progress* p, bool finished, bool found) {
     double elapsed = wall_time_sec() - p->t_start;

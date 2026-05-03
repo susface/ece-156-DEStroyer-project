@@ -2,10 +2,16 @@ cmake_minimum_required(VERSION 3.18...4.3)
 
 # =============================================================================
 # CUDA architecture MUST be set before project() -- CMake 4.0+ requirement.
-# sm_75 = Turing (RTX 20xx), sm_86 = Ampere (RTX 30xx), sm_89 = Ada (RTX 40xx)
-# sm_100 (Blackwell) omitted: CUDA 13.1 emits warnings and we don't target it.
+# sm_75  = Turing      (RTX 20xx)
+# sm_86  = Ampere      (RTX 30xx)
+# sm_89  = Ada         (RTX 40xx)
+# sm_120 = Blackwell   (RTX 50xx)  -- requires CUDA 12.8+ toolkit
+#
+# Including the GPU's native arch is critical: without a matching cubin the
+# runtime falls back to PTX JIT, and old drivers may reject newer toolkits'
+# PTX with "the provided PTX was compiled with an unsupported toolchain".
 # =============================================================================
-set(CMAKE_CUDA_ARCHITECTURES "75;86;89" CACHE STRING "CUDA architectures" FORCE)
+set(CMAKE_CUDA_ARCHITECTURES "75;86;89;120" CACHE STRING "CUDA architectures" FORCE)
 
 include(CheckLanguage)
 check_language(CUDA)
@@ -55,6 +61,7 @@ set(SOURCES
     src/progress.cpp
     src/des_cpu.cpp      # CPU DES/2DES engine (Jose)
     src/mitm_cpu.cpp     # CPU MITM + Brute-Force attacks (Armanjit)
+    src/comparisons.cpp  # CPU/GPU + MITM/BF comparison + complexity sweep
 )
 
 if(HAVE_CUDA)
@@ -71,6 +78,11 @@ target_include_directories(mitm_2des PRIVATE
 if(HAVE_CUDA)
     # Disable separable compilation — not needed for a single TU kernel
     set_target_properties(mitm_2des PROPERTIES CUDA_SEPARABLE_COMPILATION OFF)
+
+    # Link cudart dynamically so it uses the same /MD CRT as the rest of the
+    # project.  Default (-cudart static) pulls in /MT objects and triggers
+    # LNK4098 "LIBCMT conflicts with use of other libs".
+    set_target_properties(mitm_2des PROPERTIES CUDA_RUNTIME_LIBRARY Shared)
 
     # CCCL (Thrust/CUB) uses variadic macros that break the traditional MSVC
     # preprocessor when multiple SM architectures are compiled simultaneously.

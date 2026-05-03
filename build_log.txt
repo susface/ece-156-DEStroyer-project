@@ -1,0 +1,455 @@
+Using vswhere.exe to locate Visual Studio...
+Found Visual Studio at: C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools (version 18.5.11723.231)
+CMake supports generator: Visual Studio 18 2026
+Found Ninja from VS: C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja\ninja.exe
+Setting up MSVC environment...
+'vswhere.exe' is not recognized as an internal or external command,
+operable program or batch file.
+**********************************************************************
+** Visual Studio 2026 Developer Command Prompt v18.0
+** Copyright (c) 2026 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+
+=== Trying generator: Visual Studio 18 2026 ===
+
+CMake Error at C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:682 (message):
+  No CUDA toolset found.
+Call Stack (most recent call first):
+  C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:53 (__determine_compiler_id_test)
+  C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCUDACompiler.cmake:163 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:19 (project)
+
+
+-- Configuring incomplete, errors occurred!
+
+=== Trying generator: Ninja + MSVC ===
+
+CMake Error at C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:934 (message):
+  Compiling the CUDA compiler identification source file
+  "CMakeCUDACompilerId.cu" failed.
+
+  Compiler: C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/nvcc.exe
+
+  Build flags:
+
+  Id flags: --keep;--keep-dir;tmp -v
+
+
+
+  The output was:
+
+  2
+
+  #$ PATH=C:\Program Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\bin\HostX64\x64;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\bin\HostX64\x64;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\VC\VCPackages;C:\Program Files
+  (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\MSBuild\Current\bin\Roslyn;C:\Program Files
+  (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64\;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\Extensions\Microsoft\CodeCoverage.Console;C:\Program
+  Files (x86)\Windows Kits\10\bin\10.0.26100.0\\x64;C:\Program Files
+  (x86)\Windows Kits\10\bin\\x64;C:\Program Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\Common7\IDE\;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\Common7\Tools\;C:\Program
+  Files\PowerShell\7;C:\Program Files\NVIDIA GPU Computing
+  Toolkit\CUDA\v13.1\bin\x64;C:\Program Files\NVIDIA GPU Computing
+  Toolkit\CUDA\v13.1\bin;C:\Program Files\National
+  Instruments\Shared\OpenVINO\;C:\Program Files\Zulu\zulu-21\bin\;C:\Program
+  Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin;C:\Program Files\NVIDIA
+  GPU Computing Toolkit\CUDA\v12.6\libnvvp;C:\Program
+  Files\Oculus\Support\oculus-runtime;C:\Program Files\Common
+  Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program
+  Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program
+  Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA
+  app\NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program
+  Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI
+  Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\National
+  Instruments\Shared\LabVIEW CLI;C:\Program Files (x86)\IVI
+  Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files
+  (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\Calibre2\;C:\Program
+  Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\NVIDIA
+  Corporation\Nsight Compute 2025.4.1\;C:\Program Files\CMake\bin;C:\Program
+  Files\Go\bin;C:\Program Files\PowerShell\7\;C:\Program Files (x86)\Windows
+  Kits\10\Windows Performance Toolkit\;C:\Program
+  Files\LeiaSR\Platform\bin;C:\Program Files (x86)\Simulated
+  Reality\Platform\bin;C:\Program Files\Git\cmd;C:\Program
+  Files\PuTTY\;C:\Users\trigu\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\trigu\AppData\Local\Programs\Python\Python312\;C:\Users\trigu\AppData\Local\Programs\Python\Launcher\;C:\Wincupl\WINCUPL\EXE;C:\Wincupl\WINCUPL\FITTERS;C:\Users\trigu\AppData\Local\Programs\Microsoft
+  VS
+  Code\bin;C:\Users\trigu\AppData\Local\ffmpegio\ffmpeg-downloader\ffmpeg\bin;C:\Users\trigu\AppData\Local\Microsoft\WindowsApps;C:\Users\trigu\AppData\Roaming\npm;E:\modelsim_ase\win32aloem;C:\Users\trigu\.dotnet\tools;C:\Users\trigu\.local\bin;F:\Antigravity\bin;C:\Users\trigu\go\bin;F:\altera\questa_fse\win64;C:\Users\trigu\AppData\Local\Programs\Python\Python312;C:\Program
+  Files\nodejs;C:\Program Files\Git\mingw64\bin;C:\Program Files
+  (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\VC\Linux\bin\ConnectionManagerExe;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\vcpkg
+
+  #$ _NVVM_BRANCH_=nvvm
+
+  #$ _SPACE_=
+
+  #$ _CUDART_=cudart
+
+  #$ _HERE_=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.1/bin
+
+  #$ _THERE_=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.1/bin
+
+  #$ _TARGET_SIZE_=
+
+  #$ _TARGET_DIR_=
+
+  #$ _TARGET_SIZE_=64
+
+  #$ _WIN_PLATFORM_=x64
+
+  #$ TOP=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.1/bin/..
+
+  #$ CICC_PATH=C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../nvvm/bin
+
+  #$ NVVMIR_LIBRARY_DIR=C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../nvvm/libdevice
+
+  #$ PATH=C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../nvvm/bin;C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin;C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../lib;C:\Program Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\bin\HostX64\x64;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\bin\HostX64\x64;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\VC\VCPackages;C:\Program Files
+  (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\MSBuild\Current\bin\Roslyn;C:\Program Files
+  (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64\;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\Extensions\Microsoft\CodeCoverage.Console;C:\Program
+  Files (x86)\Windows Kits\10\bin\10.0.26100.0\\x64;C:\Program Files
+  (x86)\Windows Kits\10\bin\\x64;C:\Program Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\Common7\IDE\;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\Common7\Tools\;C:\Program
+  Files\PowerShell\7;C:\Program Files\NVIDIA GPU Computing
+  Toolkit\CUDA\v13.1\bin\x64;C:\Program Files\NVIDIA GPU Computing
+  Toolkit\CUDA\v13.1\bin;C:\Program Files\National
+  Instruments\Shared\OpenVINO\;C:\Program Files\Zulu\zulu-21\bin\;C:\Program
+  Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin;C:\Program Files\NVIDIA
+  GPU Computing Toolkit\CUDA\v12.6\libnvvp;C:\Program
+  Files\Oculus\Support\oculus-runtime;C:\Program Files\Common
+  Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program
+  Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program
+  Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA
+  app\NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program
+  Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI
+  Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\National
+  Instruments\Shared\LabVIEW CLI;C:\Program Files (x86)\IVI
+  Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files
+  (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\Calibre2\;C:\Program
+  Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\NVIDIA
+  Corporation\Nsight Compute 2025.4.1\;C:\Program Files\CMake\bin;C:\Program
+  Files\Go\bin;C:\Program Files\PowerShell\7\;C:\Program Files (x86)\Windows
+  Kits\10\Windows Performance Toolkit\;C:\Program
+  Files\LeiaSR\Platform\bin;C:\Program Files (x86)\Simulated
+  Reality\Platform\bin;C:\Program Files\Git\cmd;C:\Program
+  Files\PuTTY\;C:\Users\trigu\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\trigu\AppData\Local\Programs\Python\Python312\;C:\Users\trigu\AppData\Local\Programs\Python\Launcher\;C:\Wincupl\WINCUPL\EXE;C:\Wincupl\WINCUPL\FITTERS;C:\Users\trigu\AppData\Local\Programs\Microsoft
+  VS
+  Code\bin;C:\Users\trigu\AppData\Local\ffmpegio\ffmpeg-downloader\ffmpeg\bin;C:\Users\trigu\AppData\Local\Microsoft\WindowsApps;C:\Users\trigu\AppData\Roaming\npm;E:\modelsim_ase\win32aloem;C:\Users\trigu\.dotnet\tools;C:\Users\trigu\.local\bin;F:\Antigravity\bin;C:\Users\trigu\go\bin;F:\altera\questa_fse\win64;C:\Users\trigu\AppData\Local\Programs\Python\Python312;C:\Program
+  Files\nodejs;C:\Program Files\Git\mingw64\bin;C:\Program Files
+  (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\VC\Linux\bin\ConnectionManagerExe;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\vcpkg
+
+  #$ INCLUDES="-IC:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../include/cccl"
+
+  #$ SYSTEM_INCLUDES=
+
+  #$ LIBRARIES= "/LIBPATH:C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../lib/x64"
+
+  #$ CUDAFE_FLAGS=
+
+  #$ PTXAS_FLAGS=
+
+  #$ erase tmp/a_dlink.reg.c
+
+  CMakeCUDACompilerId.cu
+
+  #$ resource file tmp/CMakeCUDACompilerId.cpp4.ii.res:
+  [-D__CUDA_ARCH_LIST__=750 -nologo -E -TP -EHsc -D__CUDACC__ -D__NVCC__
+  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.1/bin/../include"
+  "-IC:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../include/cccl" -D__CUDACC_VER_MAJOR__=13
+  -D__CUDACC_VER_MINOR__=1 -D__CUDACC_VER_BUILD__=115
+  -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=1
+  -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -FI
+  "cuda_runtime.h" "CMakeCUDACompilerId.cu" ]
+
+  #$ cl.exe @"tmp/CMakeCUDACompilerId.cpp4.ii.res" >
+  "tmp/CMakeCUDACompilerId.cpp4.ii"
+
+  CMakeCUDACompilerId.cu
+
+  C:\Program Files\NVIDIA GPU Computing
+  Toolkit\CUDA\v13.1\include\crt/host_config.h(164): fatal error C1189:
+  #error: -- unsupported Microsoft Visual Studio version! Only the versions
+  between 2019 and 2022 (inclusive) are supported! The nvcc flag
+  '-allow-unsupported-compiler' can be used to override this version check;
+  however, using an unsupported host compiler may cause compilation failure
+  or incorrect run time execution.  Use at your own risk.
+
+  # --error 0x2 --
+
+
+
+
+
+Call Stack (most recent call first):
+  C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:53 (__determine_compiler_id_test)
+  C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCUDACompiler.cmake:163 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:19 (project)
+
+
+CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+
+=== Trying generator: NMake Makefiles ===
+
+CMake Error at C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:934 (message):
+  Compiling the CUDA compiler identification source file
+  "CMakeCUDACompilerId.cu" failed.
+
+  Compiler: C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/nvcc.exe
+
+  Build flags:
+
+  Id flags: --keep;--keep-dir;tmp -v
+
+
+
+  The output was:
+
+  2
+
+  #$ PATH=C:\Program Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\bin\HostX64\x64;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\bin\HostX64\x64;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\VC\VCPackages;C:\Program Files
+  (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\MSBuild\Current\bin\Roslyn;C:\Program Files
+  (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64\;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\Extensions\Microsoft\CodeCoverage.Console;C:\Program
+  Files (x86)\Windows Kits\10\bin\10.0.26100.0\\x64;C:\Program Files
+  (x86)\Windows Kits\10\bin\\x64;C:\Program Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\Common7\IDE\;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\Common7\Tools\;C:\Program
+  Files\PowerShell\7;C:\Program Files\NVIDIA GPU Computing
+  Toolkit\CUDA\v13.1\bin\x64;C:\Program Files\NVIDIA GPU Computing
+  Toolkit\CUDA\v13.1\bin;C:\Program Files\National
+  Instruments\Shared\OpenVINO\;C:\Program Files\Zulu\zulu-21\bin\;C:\Program
+  Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin;C:\Program Files\NVIDIA
+  GPU Computing Toolkit\CUDA\v12.6\libnvvp;C:\Program
+  Files\Oculus\Support\oculus-runtime;C:\Program Files\Common
+  Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program
+  Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program
+  Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA
+  app\NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program
+  Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI
+  Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\National
+  Instruments\Shared\LabVIEW CLI;C:\Program Files (x86)\IVI
+  Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files
+  (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\Calibre2\;C:\Program
+  Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\NVIDIA
+  Corporation\Nsight Compute 2025.4.1\;C:\Program Files\CMake\bin;C:\Program
+  Files\Go\bin;C:\Program Files\PowerShell\7\;C:\Program Files (x86)\Windows
+  Kits\10\Windows Performance Toolkit\;C:\Program
+  Files\LeiaSR\Platform\bin;C:\Program Files (x86)\Simulated
+  Reality\Platform\bin;C:\Program Files\Git\cmd;C:\Program
+  Files\PuTTY\;C:\Users\trigu\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\trigu\AppData\Local\Programs\Python\Python312\;C:\Users\trigu\AppData\Local\Programs\Python\Launcher\;C:\Wincupl\WINCUPL\EXE;C:\Wincupl\WINCUPL\FITTERS;C:\Users\trigu\AppData\Local\Programs\Microsoft
+  VS
+  Code\bin;C:\Users\trigu\AppData\Local\ffmpegio\ffmpeg-downloader\ffmpeg\bin;C:\Users\trigu\AppData\Local\Microsoft\WindowsApps;C:\Users\trigu\AppData\Roaming\npm;E:\modelsim_ase\win32aloem;C:\Users\trigu\.dotnet\tools;C:\Users\trigu\.local\bin;F:\Antigravity\bin;C:\Users\trigu\go\bin;F:\altera\questa_fse\win64;C:\Users\trigu\AppData\Local\Programs\Python\Python312;C:\Program
+  Files\nodejs;C:\Program Files\Git\mingw64\bin;C:\Program Files
+  (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\VC\Linux\bin\ConnectionManagerExe;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\vcpkg
+
+  #$ _NVVM_BRANCH_=nvvm
+
+  #$ _SPACE_=
+
+  #$ _CUDART_=cudart
+
+  #$ _HERE_=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.1/bin
+
+  #$ _THERE_=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.1/bin
+
+  #$ _TARGET_SIZE_=
+
+  #$ _TARGET_DIR_=
+
+  #$ _TARGET_SIZE_=64
+
+  #$ _WIN_PLATFORM_=x64
+
+  #$ TOP=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.1/bin/..
+
+  #$ CICC_PATH=C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../nvvm/bin
+
+  #$ NVVMIR_LIBRARY_DIR=C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../nvvm/libdevice
+
+  #$ PATH=C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../nvvm/bin;C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin;C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../lib;C:\Program Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\bin\HostX64\x64;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\bin\HostX64\x64;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\VC\VCPackages;C:\Program Files
+  (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\MSBuild\Current\bin\Roslyn;C:\Program Files
+  (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64\;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\Extensions\Microsoft\CodeCoverage.Console;C:\Program
+  Files (x86)\Windows Kits\10\bin\10.0.26100.0\\x64;C:\Program Files
+  (x86)\Windows Kits\10\bin\\x64;C:\Program Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\Common7\IDE\;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\Common7\Tools\;C:\Program
+  Files\PowerShell\7;C:\Program Files\NVIDIA GPU Computing
+  Toolkit\CUDA\v13.1\bin\x64;C:\Program Files\NVIDIA GPU Computing
+  Toolkit\CUDA\v13.1\bin;C:\Program Files\National
+  Instruments\Shared\OpenVINO\;C:\Program Files\Zulu\zulu-21\bin\;C:\Program
+  Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin;C:\Program Files\NVIDIA
+  GPU Computing Toolkit\CUDA\v12.6\libnvvp;C:\Program
+  Files\Oculus\Support\oculus-runtime;C:\Program Files\Common
+  Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program
+  Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program
+  Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA
+  app\NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program
+  Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI
+  Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\National
+  Instruments\Shared\LabVIEW CLI;C:\Program Files (x86)\IVI
+  Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files
+  (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\Calibre2\;C:\Program
+  Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\NVIDIA
+  Corporation\Nsight Compute 2025.4.1\;C:\Program Files\CMake\bin;C:\Program
+  Files\Go\bin;C:\Program Files\PowerShell\7\;C:\Program Files (x86)\Windows
+  Kits\10\Windows Performance Toolkit\;C:\Program
+  Files\LeiaSR\Platform\bin;C:\Program Files (x86)\Simulated
+  Reality\Platform\bin;C:\Program Files\Git\cmd;C:\Program
+  Files\PuTTY\;C:\Users\trigu\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\trigu\AppData\Local\Programs\Python\Python312\;C:\Users\trigu\AppData\Local\Programs\Python\Launcher\;C:\Wincupl\WINCUPL\EXE;C:\Wincupl\WINCUPL\FITTERS;C:\Users\trigu\AppData\Local\Programs\Microsoft
+  VS
+  Code\bin;C:\Users\trigu\AppData\Local\ffmpegio\ffmpeg-downloader\ffmpeg\bin;C:\Users\trigu\AppData\Local\Microsoft\WindowsApps;C:\Users\trigu\AppData\Roaming\npm;E:\modelsim_ase\win32aloem;C:\Users\trigu\.dotnet\tools;C:\Users\trigu\.local\bin;F:\Antigravity\bin;C:\Users\trigu\go\bin;F:\altera\questa_fse\win64;C:\Users\trigu\AppData\Local\Programs\Python\Python312;C:\Program
+  Files\nodejs;C:\Program Files\Git\mingw64\bin;C:\Program Files
+  (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja;C:\Program
+  Files (x86)\Microsoft Visual
+  Studio\18\BuildTools\Common7\IDE\VC\Linux\bin\ConnectionManagerExe;C:\Program
+  Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\vcpkg
+
+  #$ INCLUDES="-IC:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../include" "-IC:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../include/cccl"
+
+  #$ SYSTEM_INCLUDES=
+
+  #$ LIBRARIES= "/LIBPATH:C:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../lib/x64"
+
+  #$ CUDAFE_FLAGS=
+
+  #$ PTXAS_FLAGS=
+
+  #$ erase tmp/a_dlink.reg.c
+
+  CMakeCUDACompilerId.cu
+
+  #$ resource file tmp/CMakeCUDACompilerId.cpp4.ii.res:
+  [-D__CUDA_ARCH_LIST__=750 -nologo -E -TP -EHsc -D__CUDACC__ -D__NVCC__
+  "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.1/bin/../include"
+  "-IC:/Program Files/NVIDIA GPU Computing
+  Toolkit/CUDA/v13.1/bin/../include/cccl" -D__CUDACC_VER_MAJOR__=13
+  -D__CUDACC_VER_MINOR__=1 -D__CUDACC_VER_BUILD__=115
+  -D__CUDA_API_VER_MAJOR__=13 -D__CUDA_API_VER_MINOR__=1
+  -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -FI
+  "cuda_runtime.h" "CMakeCUDACompilerId.cu" ]
+
+  #$ cl.exe @"tmp/CMakeCUDACompilerId.cpp4.ii.res" >
+  "tmp/CMakeCUDACompilerId.cpp4.ii"
+
+  CMakeCUDACompilerId.cu
+
+  C:\Program Files\NVIDIA GPU Computing
+  Toolkit\CUDA\v13.1\include\crt/host_config.h(164): fatal error C1189:
+  #error: -- unsupported Microsoft Visual Studio version! Only the versions
+  between 2019 and 2022 (inclusive) are supported! The nvcc flag
+  '-allow-unsupported-compiler' can be used to override this version check;
+  however, using an unsupported host compiler may cause compilation failure
+  or incorrect run time execution.  Use at your own risk.
+
+  # --error 0x2 --
+
+
+
+
+
+Call Stack (most recent call first):
+  C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:53 (__determine_compiler_id_test)
+  C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCUDACompiler.cmake:163 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:19 (project)
+
+
+CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+
+ERROR: CMake generation failed with all generators.
+
+  Option A - Visual Studio / Build Tools:
+    Install VS 2026/2022/2019 with "Desktop development with C++" workload
+    Or just Build Tools: https://visualstudio.microsoft.com/downloads/
+
+  Option B - VS Code + MinGW:
+    1. Install MSYS2: https://www.msys2.org
+    2. In MSYS2 terminal: pacman -S mingw-w64-ucrt-x86_64-toolchain
+    3. Add C:\msys64\ucrt64\bin to your system PATH
+    4. Install CMake: https://cmake.org/download/
+    5. Re-run this script
+

@@ -10,6 +10,7 @@
 //     - IP(ciphertext) computed once on host → expR16, expL16
 //     - kernel compares R,L after 16 rounds against (expR16, expL16)
 //     - no IP/FP tables needed inside the kernel
+//  Done entirerly by Brian
 // ============================================================================
 #ifdef HAVE_CUDA
 
@@ -167,13 +168,22 @@ static void compute_sp_tables(uint32_t sp[8][64]) {
       int col = (in >> 1) & 0x0F;
       int val = SBOX[s][row * 16 + col]; // 4-bit output 0..15
 
-      // Place each output bit into its P-box destination
+      // Place 4-bit S-box output at pre-P DES positions (4s+1)..(4s+4),
+      // 1-indexed from MSB.  val.bit3 (MSB) lands at DES position (4s+1)
+      // and val.bit0 (LSB) lands at DES position (4s+4).
+      //
+      // Array convention: DES position p (1-indexed) <-> uint32_t bit (32-p).
+      uint32_t pre_p = (uint32_t)val << (28 - 4 * s);
+
+      // Apply the standard P-box forward: output_bit[i+1] = input_bit[PBOX[i]]
+      // (both 1-indexed from MSB).  Same direction as CPU des_cpu.cpp's
+      // permute() in init_sp_boxes(); the previous version of this loop used
+      // PBOX in the inverse direction, producing a self-consistent but
+      // non-standard f-function that broke the CPU-hybrid MITM lookup.
       uint32_t sp_val = 0;
-      for (int b = 0; b < 4; b++) {
-        // b=0 is MSB of val = P-box input bit (4s+1)
-        if (val & (8 >> b)) {
-          int p_out = PBOX[s * 4 + b];  // 1-indexed DES output bit
-          sp_val |= 1U << (32 - p_out); // place in uint32_t
+      for (int i = 0; i < 32; i++) {
+        if ((pre_p >> (32 - PBOX[i])) & 1U) {
+          sp_val |= 1U << (31 - i);
         }
       }
       sp[s][in] = sp_val;
@@ -970,6 +980,21 @@ CrackResult run_gpu_mitm(int bits, bool multi_pair, bool show_transfer) {
   Progress prog;
   progress_start(&prog, "GPU MITM (Build+Sort+Meet)", total_keys * 2);
 
+  // Local helper: print a CUDA error, free GPU buffers, mark result, and
+  // signal the caller to return.  Mirrors the defensive pattern used in
+  // run_des_gpu_bruteforce so a driver/PTX mismatch fails gracefully instead
+  // of letting an uncaught thrust::system_error terminate the process.
+  auto bail_cuda = [&](const char* phase, const char* errmsg) {
+    progress_finish(&prog, false);
+    printf("\n  " BRED "CUDA error in %s: %s\n" RESET, phase, errmsg);
+    cudaFree(d_mids);
+    cudaFree(d_k1);
+    cudaFree(d_found1);
+    cudaFree(d_found2);
+    result.found = false;
+    result.key_str = "(CUDA error)";
+  };
+
   double t0 = wall_time_sec();
   const int THREADS = 256;
   const int CHUNKS = 64;
@@ -990,11 +1015,30 @@ CrackResult run_gpu_mitm(int bits, bool multi_pair, bool show_transfer) {
       progress_update(&prog, keys_done / 2); // Map build to 25% bar
   }
 
-  // Sort Phase
-  thrust::device_ptr<uint64_t> dev_ptr_keys(d_mids);
-  thrust::device_ptr<uint64_t> dev_ptr_vals(d_k1);
-  thrust::sort_by_key(dev_ptr_keys, dev_ptr_keys + total_keys, dev_ptr_vals);
-  cudaDeviceSynchronize();
+  {
+    cudaError_t err = cudaGetLastError();
+    if (err != cudaSuccess) {
+      bail_cuda("MITM build phase", cudaGetErrorString(err));
+      return result;
+    }
+  }
+
+  try {
+    thrust::device_ptr<uint64_t> dev_ptr_keys(d_mids);
+    thrust::device_ptr<uint64_t> dev_ptr_vals(d_k1);
+    thrust::sort_by_key(dev_ptr_keys, dev_ptr_keys + total_keys, dev_ptr_vals);
+    cudaDeviceSynchronize();
+  } catch (const std::exception& e) {
+    bail_cuda("MITM sort phase", e.what());
+    return result;
+  }
+  {
+    cudaError_t err = cudaGetLastError();
+    if (err != cudaSuccess) {
+      bail_cuda("MITM sort phase", cudaGetErrorString(err));
+      return result;
+    }
+  }
   progress_update(&prog, total_keys); // Map sort to 50% bar
 
   // Phase 2: Meet
@@ -1022,6 +1066,14 @@ CrackResult run_gpu_mitm(int bits, bool multi_pair, bool show_transfer) {
         break;
     }
 
+    {
+      cudaError_t err = cudaGetLastError();
+      if (err != cudaSuccess) {
+        bail_cuda("MITM search phase", cudaGetErrorString(err));
+        return result;
+      }
+    }
+
     cudaMemcpy(&found_idx1, d_found1, sizeof(uint64_t), cudaMemcpyDeviceToHost);
     cudaMemcpy(&found_idx2, d_found2, sizeof(uint64_t), cudaMemcpyDeviceToHost);
   } else {
@@ -1037,11 +1089,19 @@ CrackResult run_gpu_mitm(int bits, bool multi_pair, bool show_transfer) {
       fflush(stdout);
     }
 
-    // PCIe Transfer
-    cudaMemcpy(h_mids.data(), d_mids, total_keys * sizeof(uint64_t),
-               cudaMemcpyDeviceToHost);
-    cudaMemcpy(h_k1.data(), d_k1, total_keys * sizeof(uint64_t),
-               cudaMemcpyDeviceToHost);
+    // PCIe Transfer -- check both copies; if the GPU side errored earlier,
+    // these will return the error rather than producing valid host data.
+    cudaError_t mc1 = cudaMemcpy(h_mids.data(), d_mids,
+                                 total_keys * sizeof(uint64_t),
+                                 cudaMemcpyDeviceToHost);
+    cudaError_t mc2 = cudaMemcpy(h_k1.data(), d_k1,
+                                 total_keys * sizeof(uint64_t),
+                                 cudaMemcpyDeviceToHost);
+    if (mc1 != cudaSuccess || mc2 != cudaSuccess) {
+      cudaError_t e = (mc1 != cudaSuccess) ? mc1 : mc2;
+      bail_cuda("MITM hybrid download", cudaGetErrorString(e));
+      return result;
+    }
 
     std::atomic<uint64_t> atom_f1(UINT64_MAX);
     std::atomic<uint64_t> atom_f2(UINT64_MAX);

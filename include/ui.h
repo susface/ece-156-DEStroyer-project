@@ -17,7 +17,7 @@
 #define RED        "\033[31m"
 #define BG_BLUE    "\033[44m"
 
-// Red-to-orange gradient used in the banner
+// Red to orange gradient used in the banner
 #define GR1        "\033[91m"           // bright red
 #define GR2        "\033[38;5;202m"     // red-orange
 #define GR3        "\033[38;5;208m"     // orange

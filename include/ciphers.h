@@ -30,6 +30,13 @@ CrackResult run_gpu_throughput(uint64_t n_keys);
 #endif // HAVE_CUDA
 
 // ----------------------------------------------------------------------------
+// Comparison / analysis modes (orchestrate the routines above)
+// ----------------------------------------------------------------------------
+void run_cpu_vs_gpu_mitm(int mitm_bits, bool multi_pair, bool show_transfer);
+void run_mitm_vs_bruteforce(int mitm_bits, int compare_bits, bool multi_pair);
+void run_complexity_analysis(bool multi_pair);
+
+// ----------------------------------------------------------------------------
 // Benchmark bookkeeping
 // ----------------------------------------------------------------------------
 namespace Benchmark {

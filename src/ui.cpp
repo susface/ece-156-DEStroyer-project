@@ -35,8 +35,6 @@ void ui_init() {
     SetConsoleMode(hOut, mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
     SetConsoleTitleA("DEStroyer -- CRYPTANALYSIS SUITE");
 
-    // Resize the terminal window via VT sequence (Windows Terminal honours this).
-    // 50 rows x 90 cols fits the full banner + menu without scrolling.
     printf("\033[8;40;90t");
     fflush(stdout);
 }
